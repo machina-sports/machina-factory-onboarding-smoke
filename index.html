@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Welcome to voice tts</title>
+<style>
+  :root {
+    --ink: #0e0c1f;
+    --ink-soft: #4a4660;
+    --accent: #ff5b3a;
+    --rule: rgba(14, 12, 31, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; margin: 0; }
+
+  body {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 700px at 12% -10%, #ffe3d6 0%, rgba(255,227,214,0) 60%),
+      radial-gradient(900px 600px at 100% 110%, #d8e4ff 0%, rgba(216,228,255,0) 55%),
+      linear-gradient(180deg, #fbf7f2 0%, #f3eee7 100%);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: clamp(28px, 5vw, 56px) clamp(24px, 6vw, 88px);
+  }
+
+  header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .mark-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 91, 58, 0.15);
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    padding: clamp(48px, 10vh, 120px) 0;
+    gap: clamp(32px, 5vw, 56px);
+  }
+
+  .eyebrow {
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.5;
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(56px, 11vw, 168px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+  }
+
+  h1 .accent {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .lede {
+    max-width: 56ch;
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  hr.rule {
+    border: 0;
+    height: 1px;
+    background: var(--rule);
+    margin: 0;
+  }
+
+  footer {
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  footer .meta {
+    display: flex;
+    gap: 28px;
+  }
+
+  @media (max-width: 640px) {
+    footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+    footer .meta { gap: 18px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="mark"><span class="mark-dot"></span>Voice TTS</span>
+      <span>Onboarding · v0.1</span>
+    </header>
+
+    <main>
+      <span class="eyebrow">A new instrument for the spoken word</span>
+      <h1>Welcome to <span class="accent">voice tts</span>.</h1>
+      <p class="lede">
+        You've reached the starting line. From here, plain text becomes
+        considered speech — paced, intonated, and unmistakably alive.
+        The studio is quiet; the page is yours.
+      </p>
+    </main>
+
+    <footer>
+      <span>© Voice TTS</span>
+      <span class="meta">
+        <span>Issue 001</span>
+        <span>Smoke test</span>
+        <span>Ready</span>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
