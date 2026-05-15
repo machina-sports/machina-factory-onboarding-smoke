@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to Machina Factory</title>
+  <style>
+    :root {
+      --ink:        #0b0b10;
+      --ink-soft:   #3a3a44;
+      --muted:      #6b6b78;
+      --rule:       rgba(11, 11, 16, 0.12);
+      --accent:     #c8553d;   /* warm editorial accent */
+      --paper:      #f6f3ec;   /* off-white, slightly warm */
+      --paper-cool: #eef0f4;   /* cool tint for the gradient */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      background:
+        radial-gradient(1100px 700px at 12% 8%,  rgba(200, 85, 61, 0.10), transparent 60%),
+        radial-gradient(900px  600px at 92% 100%, rgba(58, 84, 140, 0.10), transparent 65%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-cool) 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .frame {
+      flex: 1;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 40px) clamp(20px, 6vw, 64px);
+    }
+
+    /* ---------- masthead ---------- */
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .masthead .left  { display: flex; align-items: center; gap: 12px; }
+    .masthead .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(200, 85, 61, 0.15);
+    }
+    .masthead .right { color: var(--muted); }
+
+    /* ---------- hero ---------- */
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: center;
+      padding: clamp(48px, 12vh, 140px) 0;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px; height: 1px; background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: ui-serif, "Iowan Old Style", Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: clamp(56px, 11vw, 168px);
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      margin: 0;
+      max-width: 14ch;
+    }
+    h1 .ital {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+    h1 .accent { color: var(--accent); }
+
+    .lede {
+      margin: 36px 0 0;
+      max-width: 56ch;
+      font-size: clamp(18px, 1.5vw, 22px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- footer / colophon ---------- */
+    footer {
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    footer .cell strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      margin-bottom: 4px;
+    }
+    footer .cell:nth-child(2) { text-align: center; }
+    footer .cell:nth-child(3) { text-align: right; }
+
+    @media (max-width: 640px) {
+      footer { grid-template-columns: 1fr; gap: 14px; }
+      footer .cell:nth-child(2),
+      footer .cell:nth-child(3) { text-align: left; }
+      .masthead .right { display: none; }
+    }
+
+    /* ---------- entrance ---------- */
+    .reveal { opacity: 0; transform: translateY(8px); animation: rise 900ms cubic-bezier(.2,.7,.2,1) forwards; }
+    .reveal.d1 { animation-delay: 80ms; }
+    .reveal.d2 { animation-delay: 220ms; }
+    .reveal.d3 { animation-delay: 380ms; }
+    .reveal.d4 { animation-delay: 560ms; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+
+    <header class="masthead reveal d1">
+      <div class="left">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Machina Factory</span>
+      </div>
+      <div class="right">Vol. 01 &nbsp;·&nbsp; Onboarding Edition</div>
+    </header>
+
+    <main>
+      <p class="eyebrow reveal d2">A first signal</p>
+      <h1 class="reveal d3">
+        Welcome to <span class="ital">Machina</span> <span class="accent">Factory</span>.
+      </h1>
+      <p class="lede reveal d4">
+        The smoke test cleared. The page rendered, the bytes shipped, the room
+        is quiet — and that means the next thing you build here will leave the
+        room just as cleanly.
+      </p>
+    </main>
+
+    <footer class="reveal d4">
+      <div class="cell"><strong>Status</strong>Online · ready</div>
+      <div class="cell"><strong>Build</strong>Single file · no deps</div>
+      <div class="cell"><strong>Issue</strong>0001 · Welcome</div>
+    </footer>
+
+  </div>
+</body>
+</html>
