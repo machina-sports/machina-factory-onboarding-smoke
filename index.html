@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome — mateuspinheiro.umbriel+58439</title>
+<style>
+  :root {
+    --ink: #0e1014;
+    --ink-soft: #4a4f5a;
+    --rule: #1a1d24;
+    --accent: #c5524b;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1100px 700px at 12% -10%, #f5e9d8 0%, rgba(245,233,216,0) 60%),
+      radial-gradient(900px 600px at 95% 110%, #e3dff3 0%, rgba(227,223,243,0) 55%),
+      linear-gradient(180deg, #fbf8f2 0%, #f3efe6 100%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page {
+    flex: 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: clamp(20px, 4vw, 44px) clamp(20px, 6vw, 96px);
+    gap: clamp(40px, 8vh, 96px);
+  }
+
+  /* ── masthead ─────────────────────────────────────── */
+  .masthead {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+    animation: fade 700ms ease-out both;
+  }
+
+  .masthead .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+
+  .masthead .mark .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .masthead .meta {
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  /* ── hero ─────────────────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .kicker {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: clamp(28px, 5vh, 56px);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    animation: rise 700ms ease-out 80ms both;
+  }
+
+  .kicker::before {
+    content: "";
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(44px, 9vw, 132px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    animation: rise 800ms ease-out 140ms both;
+  }
+
+  h1 .line {
+    display: block;
+  }
+
+  h1 .accent {
+    font-style: normal;
+    font-weight: 600;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.03em;
+    word-break: break-word;
+  }
+
+  .lede {
+    margin: clamp(32px, 5vh, 56px) 0 0;
+    max-width: 56ch;
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    animation: rise 800ms ease-out 220ms both;
+  }
+
+  /* ── footer ───────────────────────────────────────── */
+  .colophon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    animation: fade 700ms ease-out 300ms both;
+  }
+
+  .colophon .right {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .colophon .pulse {
+    width: 7px;
+    height: 7px;
+    background: #2f7a4d;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(47, 122, 77, 0.6);
+    animation: pulse 2.2s ease-out infinite;
+  }
+
+  /* ── motion ───────────────────────────────────────── */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(47, 122, 77, 0.55); }
+    70%  { box-shadow: 0 0 0 10px rgba(47, 122, 77, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(47, 122, 77, 0); }
+  }
+
+  @media (max-width: 560px) {
+    .masthead { font-size: 10px; letter-spacing: 0.22em; }
+    .colophon { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .kicker { font-size: 11px; letter-spacing: 0.32em; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <span class="mark"><span class="dot"></span>Machina&nbsp;·&nbsp;Workspace</span>
+      <span class="meta">Vol. I · No. 58439</span>
+    </header>
+
+    <section class="hero">
+      <span class="kicker">A new workspace is ready</span>
+      <h1>
+        <span class="line">Welcome to</span>
+        <span class="line accent">mateuspinheiro.umbriel+58439&rsquo;s</span>
+        <span class="line">workspace.</span>
+      </h1>
+      <p class="lede">
+        A quiet place to think, build, and ship. Everything is wired up and waiting —
+        open a file, draft a workflow, or just sit with the silence for a moment.
+      </p>
+    </section>
+
+    <footer class="colophon">
+      <span>Onboarding · Smoke Test</span>
+      <span class="right"><span class="pulse"></span>All systems nominal</span>
+    </footer>
+  </main>
+</body>
+</html>
