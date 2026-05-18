@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — antonelli182+onboard</title>
+  <style>
+    :root {
+      --ink: #0e1116;
+      --ink-soft: #4a4f57;
+      --rule: rgba(14, 17, 22, 0.12);
+      --accent: #d24a1f;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, #fde6d8 0%, transparent 60%),
+        radial-gradient(ellipse 70% 55% at 85% 90%, #e6e0f5 0%, transparent 55%),
+        linear-gradient(180deg, #fbf7f2 0%, #f4eee6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header, footer {
+      padding: 28px clamp(24px, 6vw, 72px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    header .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    header .mark::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(210, 74, 31, 0.15);
+    }
+
+    header .meta { font-variant-numeric: tabular-nums; }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: clamp(40px, 8vw, 96px) clamp(24px, 6vw, 72px);
+    }
+
+    .stage {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--ink);
+      opacity: 0.5;
+    }
+
+    h1 {
+      font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Georgia, "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(44px, 8.4vw, 132px);
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+      margin: 0 0 32px;
+      max-width: 16ch;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(17px, 1.4vw, 21px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 56ch;
+      margin: 0;
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 64px 0 28px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 28px;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .meta-row dt {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .meta-row dd {
+      margin: 0;
+      font-size: 15px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+    }
+
+    @media (max-width: 540px) {
+      header, footer { padding: 20px 22px; font-size: 11px; }
+      .eyebrow { margin-bottom: 24px; }
+      h1 { margin-bottom: 24px; }
+      .divider { margin: 44px 0 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="mark">Machina</span>
+    <span class="meta">Workspace · v1</span>
+  </header>
+
+  <main>
+    <div class="stage">
+      <span class="eyebrow">Onboarding</span>
+      <h1>Welcome to <span class="accent">antonelli182+onboard&rsquo;s</span> workspace</h1>
+      <p class="lede">
+        Your environment is provisioned and ready. This is a quiet starting point —
+        a single page to confirm the wiring works before you build anything real.
+      </p>
+
+      <hr class="divider">
+
+      <dl class="meta-row">
+        <div>
+          <dt>Workspace</dt>
+          <dd>antonelli182+onboard</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Provisioned</dd>
+        </div>
+        <div>
+          <dt>Surface</dt>
+          <dd>Single-page smoke test</dd>
+        </div>
+      </dl>
+    </div>
+  </main>
+
+  <footer>
+    <span>© Machina</span>
+    <span>Ready</span>
+  </footer>
+</body>
+</html>
