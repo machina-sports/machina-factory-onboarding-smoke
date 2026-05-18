@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — mateuspinheiro.umbriel+37246</title>
+  <style>
+    :root {
+      --ink: #0e1116;
+      --ink-soft: #4b5563;
+      --rule: rgba(14, 17, 22, 0.12);
+      --accent: #b1442c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: ui-serif, "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 12% -10%, #fde6d3 0%, rgba(253,230,211,0) 60%),
+        radial-gradient(900px 600px at 100% 110%, #e3e8f3 0%, rgba(227,232,243,0) 55%),
+        linear-gradient(180deg, #fbf8f3 0%, #f3efe7 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 56px) clamp(24px, 6vw, 72px);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header.masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--rule);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .mark .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(177, 68, 44, 0.12);
+    }
+
+    main.hero {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: center;
+      padding: clamp(48px, 12vh, 140px) 0;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, Inter, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--ink);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: ui-serif, "Iowan Old Style", "Source Serif Pro", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(40px, 7.4vw, 92px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin: 0;
+      max-width: 18ch;
+    }
+
+    h1 .workspace {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    h1 .handle {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .lede {
+      margin: 36px 0 0;
+      max-width: 56ch;
+      font-size: clamp(17px, 1.6vw, 20px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    .meta {
+      margin-top: 56px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px 56px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Inter, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .meta div span {
+      display: block;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 17px;
+      margin-top: 6px;
+    }
+
+    footer.colophon {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Inter, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 540px) {
+      h1 .workspace { white-space: normal; }
+      .meta { gap: 24px 32px; }
+      footer.colophon { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="mark"><span class="dot"></span>Machina</span>
+      <span>Onboarding · Smoke Test</span>
+    </header>
+
+    <main class="hero">
+      <p class="eyebrow">No. 01 — Welcome</p>
+      <h1>
+        Welcome to <span class="handle">mateuspinheiro.umbriel+37246</span>’s <span class="workspace">workspace</span>.
+      </h1>
+      <p class="lede">
+        A quiet place to start. This page is the first signal that everything is wired up
+        correctly — nothing more, nothing less. From here, the work begins.
+      </p>
+
+      <div class="meta">
+        <div>Workspace<span>mateuspinheiro.umbriel+37246</span></div>
+        <div>Status<span>Ready</span></div>
+        <div>Edition<span>One-page · v1</span></div>
+      </div>
+    </main>
+
+    <footer class="colophon">
+      <span>© Machina Factory</span>
+      <span>Set in serif · Built in a single file</span>
+    </footer>
+  </div>
+</body>
+</html>
