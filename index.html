@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome — mateuspinheiro.umbriel+2021</title>
+<style>
+  :root {
+    --ink: #0f1115;
+    --ink-soft: #4a4f5a;
+    --rule: #1d1f24;
+    --accent: #ff5a1f;
+    --paper: #f4efe6;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", "Source Serif Pro", serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 800px at 85% -10%, #ffe4d3 0%, transparent 60%),
+      radial-gradient(900px 700px at -10% 110%, #e7e2f5 0%, transparent 55%),
+      linear-gradient(180deg, #fbf7ef 0%, var(--paper) 100%);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .frame {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  header.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  header.top .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  header.top .mark .dot {
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  header.top .meta { color: var(--ink-soft); }
+
+  main.hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    padding: 80px 0 60px;
+  }
+
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--ink);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(44px, 8vw, 112px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--ink);
+    max-width: 14ch;
+  }
+
+  h1 .accent {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    position: relative;
+    white-space: nowrap;
+  }
+
+  h1 .accent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.08em;
+    height: 0.18em;
+    background: var(--accent);
+    opacity: 0.35;
+    z-index: -1;
+  }
+
+  .lede {
+    margin: 40px 0 0;
+    max-width: 56ch;
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .meta-row {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .meta-row .cell strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    margin-top: 6px;
+    letter-spacing: 0.06em;
+  }
+
+  footer.foot {
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 640px) {
+    .frame { padding: 20px 22px; }
+    main.hero { padding: 48px 0 40px; }
+    .meta-row {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    header.top .meta { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="top">
+      <span class="mark"><span class="dot"></span>Machina · Workspace</span>
+      <span class="meta">Issue No. 01 — Onboarding</span>
+    </header>
+
+    <main class="hero">
+      <p class="eyebrow">Welcome aboard</p>
+      <h1>
+        Welcome to <span class="accent">mateuspinheiro.umbriel+2021</span>’s workspace.
+      </h1>
+      <p class="lede">
+        Your environment is provisioned and ready. This is the quiet moment
+        before the first build — a clean page, a steady gradient, and
+        everything wired up behind it.
+      </p>
+
+      <div class="meta-row">
+        <div class="cell">Status<strong>Online</strong></div>
+        <div class="cell">Region<strong>Auto</strong></div>
+        <div class="cell">Mode<strong>Onboarding</strong></div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <span>© Machina</span>
+      <span>v1.0 — Smoke test</span>
+    </footer>
+  </div>
+</body>
+</html>
