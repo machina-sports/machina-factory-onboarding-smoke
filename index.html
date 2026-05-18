@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome — ENTAIN Organization</title>
+<style>
+  :root {
+    --ink: #0c0d10;
+    --ink-soft: #2a2d35;
+    --muted: #6b6f7a;
+    --line: rgba(12, 13, 16, 0.12);
+    --accent: #b8341c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1100px 700px at 8% -10%, #fde6d6 0%, transparent 55%),
+      radial-gradient(900px 600px at 110% 10%, #e7e1f5 0%, transparent 60%),
+      radial-gradient(800px 800px at 50% 120%, #d8e6df 0%, transparent 55%),
+      linear-gradient(180deg, #fbf8f3 0%, #f3eee4 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .frame {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: clamp(20px, 4vw, 44px);
+  }
+
+  /* ---------- header ---------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+
+  .mark::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .meta {
+    display: none;
+    gap: 18px;
+    color: var(--muted);
+  }
+
+  @media (min-width: 640px) {
+    .meta { display: inline-flex; }
+  }
+
+  /* ---------- main ---------- */
+  main {
+    display: grid;
+    align-content: center;
+    padding: clamp(40px, 8vw, 96px) 0;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: clamp(22px, 4vw, 36px);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 9vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    color: var(--ink);
+    max-width: 14ch;
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+
+  h1 .em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  h1 .accent {
+    color: var(--accent);
+  }
+
+  .lede {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+
+  .rule {
+    width: 64px;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.4;
+    margin-bottom: 22px;
+  }
+
+  .caption {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+
+  footer .col-r {
+    text-align: right;
+  }
+
+  /* ---------- entry animation ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  .d1 { animation-delay: 0.05s; }
+  .d2 { animation-delay: 0.22s; }
+  .d3 { animation-delay: 0.42s; }
+  .d4 { animation-delay: 0.62s; }
+  .d5 { animation-delay: 0.78s; }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header class="reveal d1">
+      <span class="mark">ENTAIN&nbsp;/&nbsp;ORGANIZATION</span>
+      <span class="meta">
+        <span>Onboarding</span>
+        <span>v 1.0</span>
+      </span>
+    </header>
+
+    <main>
+      <span class="eyebrow reveal d2">Issue No. 01 — Onboarding</span>
+
+      <h1 class="reveal d3">
+        Welcome to<br>
+        <span class="em accent">ENTAIN</span><br>
+        Organization<span style="color: var(--accent);">.</span>
+      </h1>
+
+      <p class="lede reveal d4">
+        A new workspace, ready when you are. This is where teams gather signals,
+        shape stories, and turn live sport into intelligence — quietly, and at pace.
+      </p>
+
+      <div class="reveal d5">
+        <div class="rule"></div>
+        <span class="caption">Smoke test · static deploy · no dependencies</span>
+      </div>
+    </main>
+
+    <footer>
+      <span>© ENTAIN Organization</span>
+      <span class="col-r">Powered by Machina</span>
+    </footer>
+  </div>
+</body>
+</html>
