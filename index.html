@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome — mateuspinheiro.umbriel+0697</title>
+<style>
+  :root {
+    --ink: #0e0f12;
+    --ink-soft: #4a4d57;
+    --rule: rgba(14, 15, 18, 0.12);
+    --accent: #ff5a1f;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1100px 700px at 12% -8%, #ffe9d6 0%, rgba(255,233,214,0) 60%),
+      radial-gradient(900px 600px at 95% 110%, #e6e0ff 0%, rgba(230,224,255,0) 55%),
+      linear-gradient(180deg, #fbf8f3 0%, #f4efe7 100%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: clamp(24px, 4vw, 56px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: clamp(20px, 3vw, 32px);
+    border-bottom: 1px solid var(--rule);
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .mark .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 90, 31, 0.14);
+  }
+
+  main.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(48px, 10vw, 120px) 0;
+    max-width: 18ch;
+  }
+  @media (min-width: 720px) { main.hero { max-width: 22ch; } }
+
+  .eyebrow {
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 clamp(20px, 3vw, 28px);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px; height: 1px;
+    background: currentColor;
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: "Didot", "Bodoni 72", "Bodoni MT", "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(44px, 9vw, 112px);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    margin: 0;
+    max-width: none;
+    color: var(--ink);
+  }
+  h1 .accent {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--ink);
+    display: block;
+    margin-top: 0.15em;
+  }
+  h1 .handle {
+    font-style: normal;
+    font-weight: 400;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.42em;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    padding: 0.15em 0.4em;
+    background: var(--ink);
+    color: #fbf8f3;
+    border-radius: 6px;
+    vertical-align: middle;
+    transform: translateY(-0.18em);
+    word-break: break-all;
+  }
+
+  .lede {
+    margin: clamp(28px, 4vw, 40px) 0 0;
+    max-width: 52ch;
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  footer.colophon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: clamp(20px, 3vw, 32px);
+    border-top: 1px solid var(--rule);
+    font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  footer .right { text-align: right; }
+
+  @media (max-width: 520px) {
+    header.masthead, footer.colophon { flex-direction: column; align-items: flex-start; gap: 10px; }
+    footer .right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <span class="mark"><span class="dot"></span>Machina &mdash; Workspace</span>
+      <span>Vol. 01 &middot; Onboarding</span>
+    </header>
+
+    <main class="hero">
+      <p class="eyebrow">A new beginning</p>
+      <h1>
+        Welcome to
+        <span class="accent"><span class="handle">mateuspinheiro.umbriel+0697</span>'s workspace.</span>
+      </h1>
+      <p class="lede">
+        Your studio is provisioned and ready. From here you'll wire connectors, compose workflows, and ship agents that turn raw signal into stories worth reading.
+      </p>
+    </main>
+
+    <footer class="colophon">
+      <span>Established today</span>
+      <span class="right">No. 0697</span>
+    </footer>
+  </div>
+</body>
+</html>
