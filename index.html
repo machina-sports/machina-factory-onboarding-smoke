@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome — mateuspinheiro.umbriel+23214</title>
+<style>
+  :root {
+    --ink: #0d0d12;
+    --ink-soft: #4a4a55;
+    --rule: #1a1a22;
+    --paper: #f4efe6;
+    --accent: #c2410c;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 700px at 85% -10%, rgba(194, 65, 12, 0.18), transparent 60%),
+      radial-gradient(900px 600px at 0% 110%, rgba(13, 13, 18, 0.12), transparent 55%),
+      linear-gradient(180deg, #f7f2e9 0%, #ece5d6 100%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: clamp(20px, 4vw, 48px);
+    gap: clamp(32px, 6vw, 64px);
+  }
+
+  header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  header::before, header::after,
+  footer::before, footer::after {
+    content: "";
+    display: none;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .mark .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.12);
+  }
+
+  main {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    align-self: center;
+    display: grid;
+    gap: clamp(28px, 4vw, 48px);
+  }
+
+  .eyebrow {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise 0.7s ease-out 0.05s forwards;
+  }
+
+  .eyebrow .rule {
+    width: 56px;
+    height: 1px;
+    background: var(--ink-soft);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(40px, 8.4vw, 116px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: var(--ink);
+    max-width: 18ch;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.18s forwards;
+  }
+
+  h1 .welcome {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 0.42em;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.6em;
+  }
+
+  h1 .workspace {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.62em;
+    margin-top: 0.15em;
+    letter-spacing: -0.015em;
+  }
+
+  .handle {
+    word-break: break-word;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 3vw, 40px);
+    padding-top: clamp(20px, 3vw, 32px);
+    border-top: 1px solid rgba(13, 13, 18, 0.12);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 0.8s ease-out 0.38s forwards;
+  }
+
+  .meta div {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .meta dt {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+  }
+
+  .meta dd {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  footer {
+    align-items: end;
+  }
+
+  footer .stamp {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .meta { grid-template-columns: 1fr; gap: 18px; }
+    header, footer { font-size: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow, h1, .meta { opacity: 1; transform: none; animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="mark"><span class="dot"></span> Machina</span>
+      <span>Onboarding · Smoke Test</span>
+    </header>
+
+    <main>
+      <span class="eyebrow"><span class="rule"></span> No. 001 — First Light</span>
+
+      <h1>
+        <span class="welcome">Welcome to</span>
+        <span class="handle">mateuspinheiro.umbriel+23214&rsquo;s</span>
+        <span class="workspace">workspace.</span>
+      </h1>
+
+      <dl class="meta">
+        <div>
+          <dt>Status</dt>
+          <dd>Ready</dd>
+        </div>
+        <div>
+          <dt>Environment</dt>
+          <dd>Sandbox</dd>
+        </div>
+        <div>
+          <dt>Build</dt>
+          <dd>Single file · zero deps</dd>
+        </div>
+      </dl>
+    </main>
+
+    <footer>
+      <span>Editorial Edition</span>
+      <span class="stamp">v1 · 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
