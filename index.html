@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — mateuspinheiro.umbriel+4545</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --ink-soft: #5b6170;
+      --rule: rgba(15, 17, 21, 0.12);
+      --accent: #c2410c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 700px at 12% -10%, #fff5e8 0%, transparent 60%),
+        radial-gradient(900px 600px at 100% 110%, #e8eef9 0%, transparent 55%),
+        linear-gradient(180deg, #fbf8f3 0%, #f4efe6 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: clamp(24px, 5vw, 56px);
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    header .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.12);
+    }
+
+    header .meta { color: var(--ink-soft); }
+
+    main {
+      display: grid;
+      align-content: center;
+      padding: clamp(48px, 10vh, 120px) 0;
+    }
+
+    .eyebrow {
+      font-family: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: currentColor;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7.5vw, 96px);
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin: 0;
+      font-weight: 600;
+      max-width: 18ch;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    h1 .workspace-name {
+      display: inline-block;
+      word-break: break-word;
+    }
+
+    .lede {
+      margin: 36px 0 0;
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 52ch;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+      font-family: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 540px) {
+      header, footer { flex-direction: column; align-items: flex-start; }
+      footer { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="mark"><span class="dot"></span>Machina · Workspace</span>
+      <span class="meta">Onboarding · smoke test</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Workspace ready</p>
+      <h1>
+        Welcome to <span class="accent workspace-name">mateuspinheiro.umbriel+4545</span>’s workspace.
+      </h1>
+      <p class="lede">
+        Everything is wired up and standing by. Start a new project, invite a collaborator, or pick up where you left off — the floor is yours.
+      </p>
+    </main>
+
+    <footer>
+      <span>Index · 01</span>
+      <span>v1.0</span>
+    </footer>
+  </div>
+</body>
+</html>
