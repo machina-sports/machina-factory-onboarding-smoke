@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — antonelli182+machina</title>
+  <style>
+    :root {
+      --ink: #0e1116;
+      --ink-soft: #4a5161;
+      --rule: rgba(14, 17, 22, 0.12);
+      --accent: #ff5b2e;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 700px at 12% 8%,  rgba(255, 224, 178, 0.55) 0%, transparent 60%),
+        radial-gradient(900px  600px at 92% 18%, rgba(214, 224, 255, 0.55) 0%, transparent 65%),
+        radial-gradient(1200px 800px at 70% 95%, rgba(255, 215, 220, 0.45) 0%, transparent 65%),
+        linear-gradient(180deg, #fdfbf6 0%, #f6f2ea 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    header.masthead {
+      padding: clamp(20px, 4vw, 36px) clamp(24px, 6vw, 64px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .masthead .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .masthead .mark::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(32px, 8vw, 96px) clamp(24px, 6vw, 64px);
+    }
+
+    .stage {
+      max-width: 980px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: clamp(28px, 5vw, 44px);
+      opacity: 0;
+      transform: translateY(8px);
+      animation: rise 700ms ease-out 100ms forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--ink);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: "Didot", "Bodoni 72", "Bodoni MT", "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: clamp(40px, 9vw, 116px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 0 0 clamp(24px, 4vw, 36px);
+      color: var(--ink);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: rise 900ms ease-out 240ms forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 56ch;
+      margin: 0 0 clamp(36px, 6vw, 56px);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 800ms ease-out 420ms forwards;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: clamp(20px, 3vw, 40px);
+      padding-top: clamp(24px, 4vw, 32px);
+      border-top: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 800ms ease-out 580ms forwards;
+    }
+
+    .meta dt {
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .meta dd {
+      margin: 0;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    footer {
+      padding: clamp(20px, 4vw, 32px) clamp(24px, 6vw, 64px);
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .masthead .issue { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <span class="mark">Machina</span>
+    <span class="issue">Vol. 01 · Onboarding</span>
+  </header>
+
+  <main>
+    <section class="stage">
+      <div class="eyebrow">A new workspace</div>
+      <h1>
+        Welcome to <span class="accent">antonelli182+machina</span>’s workspace
+      </h1>
+      <p class="lede">
+        Your environment is provisioned and ready. From here you can wire up
+        connectors, compose workflows, and ship agents that read, reason, and
+        act on live sports data.
+      </p>
+
+      <dl class="meta">
+        <div>
+          <dt>Workspace</dt>
+          <dd>antonelli182+machina</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>Ready</dd>
+        </div>
+        <div>
+          <dt>Next</dt>
+          <dd>Install a template</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <span>Machina · machina.gg</span>
+    <span>Onboarding smoke test</span>
+  </footer>
+</body>
+</html>
