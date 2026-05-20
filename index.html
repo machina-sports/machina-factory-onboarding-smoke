@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to Machina Reports</title>
+  <style>
+    :root {
+      --ink: #0c0c10;
+      --ink-soft: #4a4a55;
+      --rule: #1a1a22;
+      --accent: #ff5b1f;
+      --paper-a: #f6f1e8;
+      --paper-b: #e8e2d4;
+      --paper-c: #d9e0e8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 12% 8%, #fff8ec 0%, transparent 55%),
+        radial-gradient(1000px 700px at 92% 96%, #cfd9e6 0%, transparent 50%),
+        linear-gradient(135deg, var(--paper-a) 0%, var(--paper-b) 55%, var(--paper-c) 100%);
+        background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(24px, 5vw, 56px);
+      overflow-x: hidden;
+    }
+
+    /* subtle paper grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      mix-blend-mode: multiply;
+      background-image:
+        radial-gradient(rgba(12,12,16,0.06) 1px, transparent 1px),
+        radial-gradient(rgba(12,12,16,0.04) 1px, transparent 1px);
+      background-size: 3px 3px, 7px 7px;
+      background-position: 0 0, 1px 2px;
+    }
+
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      position: relative;
+      z-index: 1;
+    }
+
+    header { border-bottom: 1px solid var(--rule); padding-bottom: 16px; }
+    footer { border-top: 1px solid var(--rule); padding-top: 16px; margin-top: 24px; }
+
+    .mast { font-weight: 700; color: var(--ink); letter-spacing: 0.24em; }
+    .mast span { color: var(--accent); }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: center;
+      gap: clamp(24px, 4vw, 48px);
+      padding: clamp(40px, 8vw, 96px) 0;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+      animation-delay: 0.05s;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(56px, 11vw, 168px);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.18s;
+    }
+
+    h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      position: relative;
+    }
+
+    h1 em::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0.08em;
+      height: 0.14em;
+      background: var(--accent);
+      opacity: 0.85;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: stroke 0.9s cubic-bezier(.2,.7,.1,1) forwards;
+      animation-delay: 1s;
+    }
+
+    .lede {
+      font-size: clamp(17px, 1.6vw, 21px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 56ch;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.36s;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(16px, 3vw, 40px);
+      padding-top: clamp(16px, 3vw, 32px);
+      border-top: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .meta {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .meta dt {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+    .meta dd {
+      font-family: Georgia, serif;
+      font-size: clamp(15px, 1.4vw, 18px);
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes stroke {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    @media (max-width: 640px) {
+      .meta-row { grid-template-columns: 1fr; }
+      header, footer { font-size: 10px; }
+      h1 { max-width: 12ch; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lede, .meta-row, h1 em::after {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+      h1 em::after { transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mast">Machina<span>·</span>Reports</div>
+    <div>Vol. 01 — Onboarding</div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Issue No. 0001 — First Light</div>
+    <h1>Welcome to <em>Machina&nbsp;Reports</em>.</h1>
+    <p class="lede">
+      A quiet workshop for sports intelligence — built for the slow read,
+      the sharp insight, and the report that lands before the question is
+      asked. You've arrived early. Make yourself at home.
+    </p>
+
+    <dl class="meta-row">
+      <div class="meta">
+        <dt>Edition</dt>
+        <dd>Smoke Test · Onboarding</dd>
+      </div>
+      <div class="meta">
+        <dt>Published</dt>
+        <dd>Today, from the sandbox</dd>
+      </div>
+      <div class="meta">
+        <dt>Status</dt>
+        <dd>Live and listening</dd>
+      </div>
+    </dl>
+  </main>
+
+  <footer>
+    <div>© Machina Reports</div>
+    <div>One page. No dependencies.</div>
+  </footer>
+</body>
+</html>
