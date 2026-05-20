@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — regisrb028's workspace</title>
+  <style>
+    :root {
+      --ink: #0c0c0e;
+      --ink-soft: #4a4a55;
+      --rule: #1a1a1f;
+      --accent: #d94a1f;
+      --paper-1: #f5f1ea;
+      --paper-2: #e9e3d6;
+      --paper-3: #d9cfbb;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Source Serif Pro", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 8% 12%, #fbf7ef 0%, transparent 55%),
+        radial-gradient(90% 80% at 92% 88%, #e2d6bd 0%, transparent 60%),
+        linear-gradient(180deg, var(--paper-1) 0%, var(--paper-2) 60%, var(--paper-3) 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: clamp(20px, 4vw, 48px) clamp(20px, 6vw, 88px);
+      gap: clamp(40px, 8vh, 96px);
+    }
+
+    /* ── masthead ─────────────────────────────── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--rule);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .mast-left {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+
+    .mast-mark {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink);
+    }
+
+    .mast-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--ink-soft);
+      display: inline-block;
+    }
+
+    .mast-right { text-align: right; }
+
+    /* ── hero ─────────────────────────────────── */
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 11fr) minmax(0, 1fr);
+      align-content: center;
+      gap: clamp(24px, 4vw, 64px);
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 clamp(20px, 3vh, 32px);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(48px, 9.5vw, 152px);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--ink);
+      max-width: 18ch;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      margin: clamp(28px, 4vh, 44px) 0 0;
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 52ch;
+    }
+
+    .meta {
+      margin-top: clamp(36px, 5vh, 56px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(24px, 4vw, 48px);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .meta dt {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .meta dd {
+      margin: 0;
+    }
+
+    aside {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      justify-self: end;
+      align-self: center;
+    }
+
+    /* ── footer ───────────────────────────────── */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    /* ── reveal ───────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: rise 900ms cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    .d1 { animation-delay: 60ms; }
+    .d2 { animation-delay: 220ms; }
+    .d3 { animation-delay: 420ms; }
+    .d4 { animation-delay: 620ms; }
+    .d5 { animation-delay: 820ms; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      main { grid-template-columns: 1fr; }
+      aside { display: none; }
+      .mast-right .when { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="reveal d1">
+      <div class="mast-left">
+        <span class="mast-mark">M</span>
+        <span class="mast-divider"></span>
+        <span>Machina&nbsp;·&nbsp;Workspace No. 028</span>
+      </div>
+      <div class="mast-right">
+        <span>Onboarding Edition</span>
+        <span class="when">&nbsp;·&nbsp;Vol. I</span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <p class="eyebrow reveal d2">A New Workspace</p>
+        <h1 class="reveal d3">
+          Welcome to <span class="accent">regisrb028&rsquo;s</span> workspace.
+        </h1>
+        <p class="lede reveal d4">
+          A quiet room, freshly arranged. Everything you build, ship, and revisit
+          will live here — beginning today.
+        </p>
+
+        <dl class="meta reveal d5">
+          <div>
+            <dt>Status</dt>
+            <dd>Ready</dd>
+          </div>
+          <div>
+            <dt>Edition</dt>
+            <dd>First Light</dd>
+          </div>
+          <div>
+            <dt>Operator</dt>
+            <dd>regisrb028</dd>
+          </div>
+        </dl>
+      </section>
+
+      <aside class="reveal d5">Est. today · Onboarding smoke test</aside>
+    </main>
+
+    <footer class="reveal d5">
+      <span>© Machina</span>
+      <span>Set in Didot &amp; Helvetica</span>
+    </footer>
+  </div>
+</body>
+</html>
