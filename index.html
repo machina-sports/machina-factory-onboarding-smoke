@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome — mateuspinheiro.umbriel+99545</title>
+  <style>
+    :root {
+      --ink: #0f0e17;
+      --ink-soft: #2a2840;
+      --muted: #6b6880;
+      --rule: #e6e3dc;
+      --paper: #f6f3ec;
+      --accent: #c8553d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: var(--paper);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(200, 85, 61, 0.10), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 90% 100%, rgba(63, 90, 130, 0.10), transparent 60%),
+        linear-gradient(180deg, #f8f5ee 0%, #efeae0 100%);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    .page {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: clamp(24px, 5vw, 56px);
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Top bar */
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 18px;
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .mark .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(200, 85, 61, 0.12);
+    }
+
+    .issue {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      align-content: center;
+      padding: clamp(48px, 12vh, 140px) 0;
+      gap: clamp(28px, 4vw, 44px);
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(40px, 8.5vw, 116px);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--ink);
+      max-width: 18ch;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+
+    h1 .handle {
+      display: block;
+      color: var(--ink);
+      font-style: normal;
+    }
+
+    h1 .handle .at {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .lede {
+      font-size: clamp(16px, 1.5vw, 19px);
+      color: var(--ink-soft);
+      max-width: 56ch;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(28px, 4vw, 56px);
+      padding-top: clamp(12px, 2vw, 20px);
+      border-top: 1px solid var(--rule);
+      margin-top: clamp(8px, 2vw, 16px);
+      max-width: 720px;
+    }
+
+    .meta dt {
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .meta dd {
+      margin: 0;
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .meta dd .status-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ca96b;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* Footer */
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+    }
+
+    .foot .right { text-align: right; }
+
+    /* Page-load motion */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 900ms cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    .r1 { animation-delay: 80ms; }
+    .r2 { animation-delay: 180ms; }
+    .r3 { animation-delay: 340ms; }
+    .r4 { animation-delay: 520ms; }
+    .r5 { animation-delay: 680ms; }
+    .r6 { animation-delay: 820ms; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+
+    /* Mobile tightening */
+    @media (max-width: 540px) {
+      .top, .foot { font-size: 10px; letter-spacing: 0.16em; }
+      .meta { gap: 20px; }
+      h1 { max-width: none; word-break: break-word; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top reveal r1">
+      <span class="mark"><span class="dot" aria-hidden="true"></span>Machina&nbsp;·&nbsp;Workspace</span>
+      <span class="issue">Vol. 01 / Onboarding</span>
+    </header>
+
+    <section class="hero">
+      <span class="eyebrow reveal r2">A new workspace</span>
+
+      <h1 class="reveal r3">
+        Welcome to
+        <span class="accent">&nbsp;</span>
+        <span class="handle"><span class="at">@</span>mateuspinheiro.umbriel<span class="at">+</span>99545<span class="accent">’s</span> workspace.</span>
+      </h1>
+
+      <p class="lede reveal r4">
+        A quiet place to build. Connect data sources, compose workflows, and ship agents — at the pace of thought, with the rigor of an editor's desk.
+      </p>
+
+      <dl class="meta reveal r5">
+        <div>
+          <dt>Owner</dt>
+          <dd>mateuspinheiro.umbriel+99545</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd><span class="status-dot" aria-hidden="true"></span>Ready</dd>
+        </div>
+        <div>
+          <dt>Environment</dt>
+          <dd>Onboarding · Smoke Test</dd>
+        </div>
+      </dl>
+    </section>
+
+    <footer class="foot reveal r6">
+      <span>Machina Factory</span>
+      <span class="right">Set in serif &amp; sans · No dependencies</span>
+    </footer>
+  </main>
+</body>
+</html>
