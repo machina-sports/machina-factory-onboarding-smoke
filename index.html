@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome — mateuspinheiro.umbriel+45735</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --ink-soft: #4b5563;
+      --rule: rgba(15, 17, 21, 0.12);
+      --accent: #c8553d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 85% -10%, rgba(200, 85, 61, 0.10), transparent 60%),
+        radial-gradient(900px 600px at -10% 110%, rgba(60, 90, 140, 0.10), transparent 55%),
+        linear-gradient(180deg, #fbf8f3 0%, #f3eee5 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    header, footer {
+      padding: clamp(20px, 4vw, 36px) clamp(24px, 6vw, 72px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    header .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    header .mark::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    header .meta { color: var(--ink-soft); }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: clamp(40px, 8vw, 120px) clamp(24px, 6vw, 72px);
+    }
+
+    .stage {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--ink);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: clamp(44px, 9vw, 124px);
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      margin: 0 0 clamp(28px, 4vw, 48px);
+      color: var(--ink);
+      max-width: 18ch;
+    }
+
+    h1 .handle {
+      font-style: normal;
+      font-family: "SF Mono", "JetBrains Mono", "Menlo", monospace;
+      font-size: 0.45em;
+      letter-spacing: -0.005em;
+      display: inline-block;
+      padding: 0.12em 0.35em;
+      background: var(--ink);
+      color: #fbf8f3;
+      border-radius: 6px;
+      vertical-align: 0.18em;
+      margin: 0 0.15em;
+      font-weight: 500;
+    }
+
+    .lede {
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 52ch;
+      margin: 0 0 clamp(36px, 5vw, 56px);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--rule);
+      margin: 0 0 clamp(28px, 4vw, 40px);
+      max-width: 720px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(20px, 3vw, 48px);
+      max-width: 720px;
+    }
+
+    .col h3 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+    .col p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+    }
+
+    footer .left,
+    footer .right {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    @media (max-width: 640px) {
+      .columns { grid-template-columns: 1fr; }
+      header, footer { flex-direction: column; gap: 12px; align-items: flex-start; }
+      h1 .handle { display: inline-block; margin-top: 0.1em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="mark">Machina</span>
+    <span class="meta">Onboarding · Smoke test</span>
+  </header>
+
+  <main>
+    <div class="stage">
+      <p class="eyebrow">Workspace ready</p>
+      <h1>
+        Welcome to <span class="handle">mateuspinheiro.umbriel+45735</span>'s workspace.
+      </h1>
+      <p class="lede">
+        Everything is wired up and waiting. This is the quiet moment before the
+        first idea — a single page, a fresh canvas, and a workspace that's
+        entirely yours.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="columns">
+        <div class="col">
+          <h3>01 — Build</h3>
+          <p>Spin up agents, workflows, and connectors with a single brief.</p>
+        </div>
+        <div class="col">
+          <h3>02 — Ship</h3>
+          <p>Preview, iterate, and deploy without leaving the conversation.</p>
+        </div>
+        <div class="col">
+          <h3>03 — Repeat</h3>
+          <p>Every project compounds on the last. Your workspace remembers.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span class="left">© Machina Factory</span>
+    <span class="right">v1 · static</span>
+  </footer>
+</body>
+</html>
