@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome — mateuspinheiro.umbriel+45376</title>
+<style>
+  :root {
+    --ink: #0c0c10;
+    --ink-soft: #4a4a55;
+    --rule: #1a1a22;
+    --accent: #ff5a1f;
+    --bg-1: #f6f1ea;
+    --bg-2: #eae4f2;
+    --bg-3: #f9e7d4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 700px at 12% 8%, var(--bg-3) 0%, transparent 55%),
+      radial-gradient(1100px 800px at 92% 18%, var(--bg-2) 0%, transparent 60%),
+      radial-gradient(900px 700px at 70% 96%, #e6efe6 0%, transparent 55%),
+      linear-gradient(180deg, var(--bg-1) 0%, #fbf7f1 100%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* subtle paper grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: .35;
+    mix-blend-mode: multiply;
+    background-image:
+      radial-gradient(rgba(12,12,16,.06) 1px, transparent 1px),
+      radial-gradient(rgba(12,12,16,.04) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+
+  header, main, footer { position: relative; }
+
+  header {
+    padding: 28px clamp(20px, 5vw, 56px) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .brand-mark {
+    width: 22px; height: 22px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    position: relative;
+  }
+  .brand-mark::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .meta-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #2ecc71;
+    box-shadow: 0 0 0 4px rgba(46,204,113,.18);
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  main {
+    flex: 1;
+    padding: clamp(48px, 9vw, 120px) clamp(20px, 6vw, 80px);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 36px; height: 1px;
+    background: var(--ink);
+    display: inline-block;
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(40px, 7.6vw, 104px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+  }
+
+  h1 .accent {
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    background: linear-gradient(180deg, var(--ink) 0%, #2a2a35 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+  }
+  h1 .accent::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0.08em;
+    height: 0.18em;
+    background: var(--accent);
+    opacity: .85;
+    z-index: -1;
+    transform: skewX(-8deg);
+  }
+
+  .handle {
+    font-family: "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.82em;
+    letter-spacing: -0.01em;
+    padding: 0 0.18em;
+    border-bottom: 2px solid var(--accent);
+    white-space: nowrap;
+  }
+
+  .lede {
+    margin: clamp(28px, 4vw, 48px) 0 0;
+    max-width: 52ch;
+    font-size: clamp(16px, 1.5vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .rule {
+    margin-top: clamp(56px, 9vw, 96px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: end;
+    border-top: 1px solid rgba(12,12,16,.14);
+    padding-top: 28px;
+  }
+
+  .rule-item {
+    grid-column: span 4;
+    font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+  .rule-item .k {
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .rule-item .v {
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .rule-item .v.mono {
+    font-family: "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  footer {
+    padding: 22px clamp(20px, 5vw, 56px) 28px;
+    font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  @media (max-width: 720px) {
+    header { padding-top: 20px; font-size: 11px; }
+    .meta-right .hide-sm { display: none; }
+    .rule-item { grid-column: span 12; }
+    .rule { gap: 18px; }
+    footer { flex-direction: column; gap: 6px; }
+  }
+
+  /* page-load reveal */
+  .reveal { opacity: 0; transform: translateY(8px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .r1 { animation-delay: .05s; }
+  .r2 { animation-delay: .18s; }
+  .r3 { animation-delay: .34s; }
+  .r4 { animation-delay: .52s; }
+  @keyframes rise {
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; animation: none; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <span class="brand reveal r1">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Machina&nbsp;·&nbsp;Workspace
+    </span>
+    <span class="meta-right reveal r1">
+      <span><span class="dot" aria-hidden="true"></span>Provisioned</span>
+      <span class="hide-sm">Vol.&nbsp;01 — Onboarding</span>
+    </span>
+  </header>
+
+  <main>
+    <div class="eyebrow reveal r2">A new workspace · Issue №&nbsp;001</div>
+
+    <h1 class="reveal r3">
+      <span>Welcome to</span><br>
+      <span class="accent"><span class="handle">mateuspinheiro.umbriel+45376</span>’s</span><br>
+      <span>workspace.</span>
+    </h1>
+
+    <p class="lede reveal r4">
+      Quiet by design. Bring your data, your agents, your ideas — this is the
+      blank page where the next thing begins. Everything you build from here
+      lives in your own private corner of Machina.
+    </p>
+
+    <section class="rule reveal r4" aria-label="Workspace details">
+      <div class="rule-item">
+        <div class="k">Owner</div>
+        <div class="v mono">mateuspinheiro.umbriel+45376</div>
+      </div>
+      <div class="rule-item">
+        <div class="k">Status</div>
+        <div class="v">Ready · awaiting first build</div>
+      </div>
+      <div class="rule-item">
+        <div class="k">Environment</div>
+        <div class="v">Onboarding · smoke test</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© Machina — Editorial onboarding</span>
+    <span>Composed in a single file</span>
+  </footer>
+</body>
+</html>
