@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Regisrb028+2525's Workspace</title>
+    <style>
+        /* Base Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #fbfaf8 0%, #f1ebe2 100%);
+            color: #1c1814;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container */
+        .workspace-card {
+            max-width: 720px;
+            width: 100%;
+            padding: 5rem 3.5rem;
+            text-align: left;
+            position: relative;
+            animation: cardFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Subtle badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #8c7f6e;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(140, 127, 110, 0.25);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Editorial Bold Heading */
+        h1 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: #120e0a;
+            margin-bottom: 1.75rem;
+            animation: textFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Subtle body copy */
+        p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.65;
+            color: #594f43;
+            font-weight: 300;
+            max-width: 560px;
+            animation: textFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+        }
+
+        /* Animations */
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes textFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive refinements */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem;
+            }
+            .workspace-card {
+                padding: 3.5rem 1.5rem;
+            }
+            .badge {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="workspace-card" role="main">
+        <span class="badge" aria-hidden="true">Active Workspace</span>
+        <h1>Welcome to regisrb028+2525's workspace</h1>
+        <p>This is an onboarding smoke test verifying that your GH App, sandbox container, and Netlify hosting deployment are working end-to-end.</p>
+    </main>
+</body>
+</html>
