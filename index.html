@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome</title>
+  <style>
+    :root {
+      --ink: #14131a;
+      --muted: #5c5a6b;
+      --accent: #6d28d9;
+      --line: rgba(20, 19, 26, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% 0%, #f3eefb 0%, transparent 55%),
+        radial-gradient(1000px 700px at 100% 100%, #eaf2fb 0%, transparent 50%),
+        linear-gradient(160deg, #fbfaff 0%, #f4f3f9 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 8vw, 4.75rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+    }
+
+    h1 .name {
+      font-style: italic;
+      background: linear-gradient(120deg, #6d28d9, #2563eb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      word-break: break-word;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+    }
+
+    .footer {
+      margin-top: clamp(2.5rem, 6vw, 3.5rem);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">Workspace Ready</span>
+    <h1>Welcome to <span class="name">mateuspinheiro.umbriel+3247</span>&rsquo;s workspace</h1>
+    <p class="lede">Everything is set up and ready to go. This is your starting point — build, explore, and ship from here.</p>
+    <div class="footer">Onboarding · Smoke Test Passed</div>
+  </main>
+</body>
+</html>
