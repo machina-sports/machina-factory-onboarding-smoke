@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #0e0d12;
+      --ink-soft: #4a4754;
+      --accent: #5b3df5;
+      --paper: #f6f4ef;
+      --line: rgba(14, 13, 18, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 12% -10%, rgba(91, 61, 245, 0.14), transparent 60%),
+        radial-gradient(900px 600px at 100% 110%, rgba(245, 138, 61, 0.12), transparent 55%),
+        linear-gradient(180deg, #faf8f3 0%, var(--paper) 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 5vw, 3.5rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(91, 61, 245, 0.16);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2.5rem, 9vw, 6rem) 0;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: rise 0.8s 0.05s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      opacity: 0;
+      animation: rise 0.9s 0.18s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      margin-top: clamp(1.75rem, 4vw, 2.5rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s 0.34s ease forwards;
+    }
+
+    .rule {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      height: 1px;
+      width: 100%;
+      background: var(--line);
+      opacity: 0;
+      animation: fade 1s 0.5s ease forwards;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span class="mark"><span class="dot"></span>Machina</span>
+      <span>Onboarding</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">A new release cadence</p>
+      <h1>Welcome to <em>Machina Drops</em></h1>
+      <p class="lede">
+        Fresh agents, workflows, and templates — delivered in focused drops.
+        You're all set up. This is where it begins.
+      </p>
+      <div class="rule"></div>
+    </main>
+
+    <footer>
+      <span>Machina Sports</span>
+      <span>Smoke test &middot; v1</span>
+    </footer>
+  </div>
+</body>
+</html>
