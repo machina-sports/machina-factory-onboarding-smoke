@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome — dziudziaalbert's workspace</title>
+  <style>
+    :root {
+      --ink: #16151a;
+      --muted: #6b6873;
+      --accent: #4338ca;
+      --line: rgba(22, 21, 26, 0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 12% -10%, rgba(99, 102, 241, 0.18), transparent 55%),
+        radial-gradient(1000px 700px at 100% 0%, rgba(244, 114, 182, 0.14), transparent 50%),
+        radial-gradient(900px 900px at 80% 110%, rgba(45, 212, 191, 0.12), transparent 55%),
+        linear-gradient(180deg, #fbfbfd 0%, #f4f3f7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 720px;
+      text-align: left;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: clamp(1.4rem, 4vw, 2.2rem);
+      opacity: 0;
+      animation: rise 0.7s ease-out 0.05s forwards;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(67, 56, 202, 0.14);
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 8vw, 4.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.1rem, 3vw, 1.6rem);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.18s forwards;
+    }
+
+    h1 .name {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--accent), #db2777);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.32s forwards;
+    }
+
+    .rule {
+      height: 1px;
+      width: 100%;
+      max-width: 240px;
+      background: var(--line);
+      margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.2rem, 3vw, 1.6rem);
+      opacity: 0;
+      animation: grow 0.9s ease-out 0.45s forwards;
+      transform-origin: left;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.55s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); }
+      to   { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="eyebrow"><span class="dot"></span>Workspace ready</span>
+    <h1>Welcome to <span class="name">dziudziaalbert&rsquo;s</span> workspace</h1>
+    <p class="lede">Everything is set up and ready to go. This is your space to build, experiment, and ship.</p>
+    <div class="rule"></div>
+    <footer>Onboarding complete &middot; Machina</footer>
+  </main>
+</body>
+</html>
