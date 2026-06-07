@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to machina-worldcup</title>
+  <style>
+    :root {
+      --ink: #0e0f13;
+      --muted: #5b6170;
+      --accent: #c2410c;
+      --line: rgba(14, 15, 19, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, #fbe9dd 0%, rgba(251, 233, 221, 0) 55%),
+        radial-gradient(1000px 700px at 100% 0%, #e6ecf5 0%, rgba(230, 236, 245, 0) 50%),
+        linear-gradient(180deg, #fcfbf9 0%, #f4f2ee 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 5vw, 4rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    .mark {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2.5rem, 9vw, 6rem) 0;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: rise 0.7s ease-out 0.05s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.15s forwards;
+    }
+
+    h1 .accent { font-style: italic; color: var(--accent); }
+
+    .lede {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      margin-top: clamp(1.5rem, 4vw, 2.25rem);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.3s forwards;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--line);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.45s forwards;
+    }
+
+    footer .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 999px;
+      background: #16a34a;
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .eyebrow, h1, .lede, footer { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span class="mark">machina &middot; worldcup</span>
+      <span class="badge">Onboarding</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Smoke test &mdash; you're live</p>
+      <h1>Welcome to <span class="accent">machina&#8209;worldcup</span></h1>
+      <p class="lede">
+        Your project is up and rendering. This minimal welcome screen confirms
+        the deploy pipeline works end&#8209;to&#8209;end &mdash; ready for the real build.
+      </p>
+    </main>
+
+    <footer>
+      <span class="status"><span class="dot"></span> Deploy healthy</span>
+      <span>Machina Factory</span>
+    </footer>
+  </div>
+</body>
+</html>
