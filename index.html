@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to jacobe.zang's workspace</title>
+  <style>
+    :root {
+      --ink: #16161a;
+      --muted: #6b6b76;
+      --line: #e4e2dd;
+      --accent: #b4471f;
+      --paper: #f6f4ef;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% -10%, #fbf0e6 0%, rgba(251,240,230,0) 55%),
+        radial-gradient(120% 100% at 100% 110%, #eef0f2 0%, rgba(238,240,242,0) 50%),
+        var(--paper);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem clamp(1.5rem, 6vw, 5rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 0;
+    }
+
+    .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(.2,.7,.2,1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.75rem);
+      line-height: 1.02;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      max-width: 16ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.22s forwards;
+    }
+
+    h1 .name {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 84px;
+      height: 2px;
+      background: var(--ink);
+      margin: 2.5rem 0 1.75rem;
+      opacity: 0;
+      animation: grow 0.9s cubic-bezier(.2,.7,.2,1) 0.45s forwards;
+      transform-origin: left center;
+    }
+
+    .sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      color: var(--muted);
+      max-width: 48ch;
+      line-height: 1.6;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.55s forwards;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); }
+      to   { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span class="mark"><span class="dot"></span> Machina</span>
+      <span>Onboarding</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Workspace ready</p>
+      <h1>Welcome to <span class="name">jacobe.zang&rsquo;s</span> workspace</h1>
+      <div class="rule"></div>
+      <p class="sub">Everything is set up and ready to go. This is your starting point &mdash; a clean, quiet space to build from.</p>
+    </main>
+
+    <footer>
+      <span>Smoke test &middot; All systems nominal</span>
+      <span>v1.0</span>
+    </footer>
+  </div>
+</body>
+</html>
