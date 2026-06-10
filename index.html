@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Austin's workspace</title>
+  <style>
+    :root {
+      --ink: #16130f;
+      --muted: #6b6256;
+      --accent: #b4502a;
+      --line: rgba(22, 19, 15, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% 0%, #fbf3e6 0%, rgba(251, 243, 230, 0) 55%),
+        radial-gradient(120% 100% at 100% 100%, #f3e3d2 0%, rgba(243, 227, 210, 0) 50%),
+        linear-gradient(160deg, #fdfaf4 0%, #f6ede0 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      flex: 1;
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 6vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(1.75rem, 4vw, 2.75rem);
+    }
+
+    .eyebrow {
+      font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.05s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.25rem;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 6rem);
+      line-height: 0.98;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: rise 0.9s ease 0.18s forwards;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 44ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.32s forwards;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      opacity: 0;
+      animation: fade 1s ease 0.45s forwards;
+    }
+
+    footer {
+      max-width: 880px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 clamp(1.5rem, 6vw, 4rem) clamp(2rem, 5vw, 4rem);
+      font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fade 1s ease 0.6s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lede, .divider, footer { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Workspace ready</p>
+    <h1>Welcome to <span class="accent">Austin's</span> workspace</h1>
+    <p class="lede">Everything is set up and the lights are on. This is your starting point — clean, quiet, and ready for whatever you build next.</p>
+    <div class="divider"></div>
+  </main>
+  <footer>
+    <span>Onboarding · smoke test</span>
+    <span>Machina</span>
+  </footer>
+</body>
+</html>
