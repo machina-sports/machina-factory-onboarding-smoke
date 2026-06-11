@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Chen Sports</title>
+  <style>
+    :root {
+      --ink: #0e1116;
+      --ink-soft: #4a5160;
+      --accent: #d6402f;
+      --bg-1: #fcfbf9;
+      --bg-2: #f1efe9;
+      --bg-3: #e7ecf2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% 8%, rgba(214, 64, 47, 0.06), transparent 55%),
+        radial-gradient(120% 100% at 88% 95%, rgba(58, 96, 158, 0.08), transparent 55%),
+        linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 55%, var(--bg-3) 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 46rem;
+      width: 100%;
+      text-align: left;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      animation: rise 0.9s 0.05s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    .rule {
+      display: inline-block;
+      width: 2.4rem;
+      height: 2px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.9rem;
+      transform: translateY(-0.18em);
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      animation: rise 0.9s 0.12s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      animation: rise 0.9s 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    footer {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      animation: rise 0.9s 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main, .eyebrow, h1, p.lede, footer { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow"><span class="rule"></span>Chen Sports</p>
+    <h1>Welcome to<br /><span class="accent">Chen Sports</span></h1>
+    <p class="lede">The home for sharper sports coverage — stories, stats, and signal, with none of the noise. You're in the right place.</p>
+    <footer>Onboarding ready &middot; v1.0</footer>
+  </main>
+</body>
+</html>
