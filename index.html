@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to regisrb028+4444's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b6259;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #b5462e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 0% 0%, #fbf6ee 0%, transparent 55%),
+        radial-gradient(140% 140% at 100% 100%, #f0e4d6 0%, transparent 50%),
+        linear-gradient(160deg, #fdfaf4 0%, #f4ece1 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+      animation: fade 900ms ease 120ms both;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.25rem;
+      height: 1px;
+      background: var(--accent);
+      flex: none;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 9vw, 5.25rem);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      animation: fade 900ms ease 220ms both;
+    }
+
+    h1 .name {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      animation: fade 900ms ease 340ms both;
+    }
+
+    .footer {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      animation: fade 900ms ease 460ms both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card, .eyebrow, h1, p.lede, .footer { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">Workspace ready</div>
+    <h1>Welcome to <span class="name">regisrb028+4444's</span> workspace</h1>
+    <p class="lede">Everything's set up and good to go. This is your starting point — a quiet, clean space to build from.</p>
+    <div class="footer">Onboarding smoke test &middot; Machina</div>
+  </main>
+</body>
+</html>
