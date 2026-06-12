@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — dhruv.kaul's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b635c;
+      --accent: #b3471f;
+      --paper: #f6f2ec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 12% -10%, #fdfbf7 0%, rgba(253,251,247,0) 55%),
+        radial-gradient(1000px 800px at 110% 120%, #efe6d8 0%, rgba(239,230,216,0) 60%),
+        linear-gradient(160deg, #f8f4ee 0%, #efe7db 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+      text-align: left;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      animation: rise 900ms 80ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: rise 900ms 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    h1 .name {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--ink);
+      margin: 0 0 1.5rem;
+      animation: rise 900ms 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      animation: rise 900ms 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Workspace · Ready</p>
+    <h1>Welcome to <span class="name">dhruv.kaul</span>'s workspace</h1>
+    <div class="rule"></div>
+    <p class="lede">Everything is set up and good to go. This is your space to build, experiment, and ship.</p>
+  </main>
+</body>
+</html>
