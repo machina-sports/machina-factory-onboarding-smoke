@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to Sport Skill</title>
+  <style>
+    :root {
+      --ink: #11131a;
+      --muted: #5b6170;
+      --accent: #2d5bff;
+      --bg-1: #f4f6fb;
+      --bg-2: #e9edf7;
+      --bg-3: #fdfdff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 12% -10%, rgba(45,91,255,0.10), transparent 60%),
+        radial-gradient(900px 500px at 100% 110%, rgba(255,138,76,0.10), transparent 55%),
+        linear-gradient(160deg, var(--bg-3) 0%, var(--bg-1) 45%, var(--bg-2) 100%);
+      background-attachment: fixed;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      text-align: left;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      opacity: 0;
+      animation: fade 0.8s ease 0.15s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 5.5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--accent);
+      margin: clamp(2rem, 4vw, 2.75rem) 0 clamp(1.25rem, 3vw, 1.75rem);
+      border-radius: 2px;
+      opacity: 0;
+      animation: grow 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+      transform-origin: left;
+    }
+
+    .meta {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      opacity: 0;
+      animation: fade 0.8s ease 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); }
+      to { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to<br><span class="accent">Sport Skill</span></h1>
+    <p class="lede">Your starting line for building, testing, and shipping sports intelligence. Everything begins here.</p>
+    <div class="rule"></div>
+    <p class="meta">Smoke test &middot; ready to go</p>
+  </main>
+</body>
+</html>
