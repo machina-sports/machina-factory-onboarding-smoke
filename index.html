@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to 2026 World Cup</title>
+  <style>
+    :root {
+      --ink: #0f1419;
+      --muted: #5b6670;
+      --accent: #006847;
+      --accent-2: #c8102e;
+      --paper: #f7f5f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 80% at 15% 10%, rgba(0, 104, 71, 0.10), transparent 55%),
+        radial-gradient(120% 90% at 90% 90%, rgba(200, 16, 46, 0.08), transparent 55%),
+        linear-gradient(160deg, #fbfaf6 0%, var(--paper) 45%, #efece4 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7vh 6vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 760px;
+      width: 100%;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+      animation: fade 0.9s ease 0.1s both;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 5.6rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+      animation: fade 0.9s ease 0.25s both;
+    }
+
+    h1 .year {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 2px;
+      margin: 0 0 1.8rem;
+      animation: grow 0.9s ease 0.4s both;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 52ch;
+      animation: fade 0.9s ease 0.5s both;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: fade 0.9s ease 0.65s both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes grow {
+      from { opacity: 0; width: 0; }
+      to   { opacity: 1; width: 64px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to<span class="year">2026 World Cup</span></h1>
+    <div class="rule"></div>
+    <p class="lede">
+      The tournament is on the horizon. This is a minimal starting point —
+      clean type, quiet color, and room to breathe before the build begins.
+    </p>
+    <footer>Machina &middot; Ready to ship</footer>
+  </main>
+</body>
+</html>
