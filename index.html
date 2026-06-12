@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to world-cup-analysis</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --muted: #5b6472;
+      --line: #e4e7ec;
+      --accent: #c8102e;
+      --bg-1: #fbfaf7;
+      --bg-2: #eef1f6;
+      --bg-3: #f7ecec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Georgia", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 600px at 12% -10%, var(--bg-3) 0%, transparent 55%),
+        radial-gradient(1000px 700px at 100% 110%, var(--bg-2) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-1), #ffffff);
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    main {
+      max-width: 56rem;
+      width: 100%;
+      animation: rise 900ms cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      animation: fade 800ms ease both;
+      animation-delay: 120ms;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.2rem;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 1.6rem 0 1.4rem;
+      animation: fade 800ms ease both;
+      animation-delay: 220ms;
+    }
+
+    h1 .accent {
+      display: block;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 38rem;
+      animation: fade 800ms ease both;
+      animation-delay: 340ms;
+    }
+
+    .rule {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      animation: fade 800ms ease both;
+      animation-delay: 460ms;
+    }
+
+    .rule b { color: var(--ink); font-weight: 600; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main, .eyebrow, h1, p.lede, .rule { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="eyebrow">Onboarding</span>
+    <h1>
+      Welcome to
+      <span class="accent">world-cup-analysis</span>
+    </h1>
+    <p class="lede">
+      Your project is live and ready. This is a clean starting point —
+      from here you can wire in data, build workflows, and shape the
+      experience however you like.
+    </p>
+    <div class="rule">
+      <span><b>Status</b> &nbsp;Ready</span>
+      <span><b>Build</b> &nbsp;Single file · no dependencies</span>
+    </div>
+  </main>
+</body>
+</html>
