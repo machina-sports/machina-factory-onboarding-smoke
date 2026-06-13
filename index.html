@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>World Cup Lab</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --line: #e4ddd3;
+      --accent: #b3401a;
+      --paper: #faf6ef;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 12% -10%, #fffdf8 0%, rgba(255,253,248,0) 60%),
+        radial-gradient(900px 500px at 100% 0%, #f3ece0 0%, rgba(243,236,224,0) 55%),
+        linear-gradient(170deg, var(--paper) 0%, #f1e9dc 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 880px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.25rem, 4vw, 2rem);
+      opacity: 0;
+      animation: rise 0.7s ease forwards 0.1s;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.6rem, 9vw, 5.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.22s;
+    }
+
+    h1 .lab { font-style: italic; color: var(--accent); }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.34s;
+    }
+
+    .rule {
+      height: 1px;
+      width: 100%;
+      background: var(--line);
+      margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.46s;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.46s;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to<br />World Cup <span class="lab">Lab</span></h1>
+    <p class="lede">
+      A quiet starting line. Everything is wired and ready &mdash;
+      this single page confirms the setup ships clean before the real work begins.
+    </p>
+    <div class="rule"></div>
+    <footer>
+      <span>World Cup Lab</span>
+      <span>v0.1 &middot; index.html</span>
+    </footer>
+  </main>
+</body>
+</html>
