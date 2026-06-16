@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to 178797777's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b635b;
+      --line: #e4ddd3;
+      --accent: #b4502a;
+      --bg-1: #fbf7f0;
+      --bg-2: #f3ebdd;
+      --bg-3: #efe7f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% 8%, var(--bg-3) 0%, rgba(239,231,240,0) 48%),
+        radial-gradient(120% 110% at 92% 96%, var(--bg-2) 0%, rgba(243,235,221,0) 52%),
+        linear-gradient(165deg, var(--bg-1) 0%, #f6f0e6 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 6vw, 6rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 56rem;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 6rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 38rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+      margin: clamp(2.5rem, 6vw, 4rem) 0 clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: fade 1s ease 0.55s forwards;
+    }
+
+    footer {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.5rem;
+      justify-content: space-between;
+      opacity: 0;
+      animation: fade 1s ease 0.65s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Workspace ready</p>
+    <h1>Welcome to <span class="accent">178797777&rsquo;s</span> workspace</h1>
+    <p class="lede">Everything is set up and running. This is your starting point &mdash; a quiet, clean space to build, organize, and ship whatever comes next.</p>
+    <div class="rule"></div>
+    <footer>
+      <span>Onboarding complete</span>
+      <span>Machina</span>
+    </footer>
+  </main>
+</body>
+</html>
