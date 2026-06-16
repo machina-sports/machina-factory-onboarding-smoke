@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to dog's workspace</title>
+  <style>
+    :root {
+      --ink: #16130f;
+      --muted: #6b6358;
+      --accent: #b4541a;
+      --paper: #f7f3ec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(120% 90% at 12% 8%, #fefcf8 0%, rgba(254,252,248,0) 55%),
+        radial-gradient(130% 110% at 88% 100%, #efe3d2 0%, rgba(239,227,210,0) 60%),
+        linear-gradient(160deg, #f9f5ee 0%, #f1e8da 100%);
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 46rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.12s forwards;
+    }
+
+    h1 .accent { font-style: italic; color: var(--accent); }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 34rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.24s forwards;
+    }
+
+    .rule {
+      width: 3.5rem;
+      height: 2px;
+      background: var(--accent);
+      margin: 2.5rem 0 1.5rem;
+      transform-origin: left;
+      opacity: 0;
+      animation: grow 0.8s ease 0.36s forwards;
+    }
+
+    .footnote {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.8s ease 0.48s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); }
+      to { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <span class="accent">dog's</span> workspace</h1>
+    <div class="rule"></div>
+    <p class="lede">Everything's set up and ready. This is your home base — a calm, focused place to start building.</p>
+    <p class="footnote">Smoke test passed · Machina</p>
+  </main>
+</body>
+</html>
