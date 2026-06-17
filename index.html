@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to chen-trial</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b6259;
+      --accent: #b4501a;
+      --line: rgba(20, 17, 15, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8vh 6vw;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(120% 90% at 8% 0%, #fdf6ec 0%, rgba(253, 246, 236, 0) 55%),
+        radial-gradient(130% 120% at 100% 100%, #f0e3d3 0%, rgba(240, 227, 211, 0) 60%),
+        linear-gradient(160deg, #fbf3e7 0%, #f4ead9 50%, #efe2cf 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 5.6rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      margin-bottom: 2.6rem;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(180, 80, 26, 0.5);
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(180, 80, 26, 0.45); }
+      70%  { box-shadow: 0 0 0 10px rgba(180, 80, 26, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(180, 80, 26, 0); }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 6vh 7vw; }
+      .eyebrow { margin-bottom: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding · Smoke Test</p>
+    <h1>Welcome to <span class="accent">chen-trial</span></h1>
+    <p class="lede">
+      Everything is wired up and running. This is your starting point — a clean
+      slate ready for whatever you build next.
+    </p>
+    <div class="meta">
+      <span class="dot" aria-hidden="true"></span>
+      <span>System ready</span>
+    </div>
+  </main>
+</body>
+</html>
