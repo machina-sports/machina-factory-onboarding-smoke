@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to 2828506's workspace</title>
+  <style>
+    :root {
+      --ink: #15131a;
+      --muted: #6b6577;
+      --accent: #5b3df5;
+      --line: rgba(21, 19, 26, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background:
+        radial-gradient(1200px 600px at 12% -10%, rgba(91, 61, 245, 0.10), transparent 60%),
+        radial-gradient(900px 500px at 100% 110%, rgba(245, 61, 160, 0.08), transparent 55%),
+        linear-gradient(180deg, #fbfaff 0%, #f3f1fb 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      max-width: 640px;
+      width: 100%;
+      text-align: left;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      animation: rise 0.9s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 4.75rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: rise 0.9s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    h1 .accent {
+      background: linear-gradient(105deg, var(--accent), #f53da0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      color: var(--muted);
+      max-width: 46ch;
+      line-height: 1.65;
+      animation: rise 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .footer {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      animation: rise 0.9s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">Onboarding</span>
+    <h1>Welcome to <span class="accent">2828506's</span> workspace</h1>
+    <p>You're all set. This is your space to build, automate, and ship — clean, fast, and ready when you are.</p>
+    <div class="footer">Powered by Machina</div>
+  </main>
+</body>
+</html>
