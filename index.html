@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to Matthias's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --accent: #b1452c;
+      --line: rgba(20, 17, 15, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 85% -10%, rgba(177, 69, 44, 0.10), transparent 55%),
+        radial-gradient(900px 700px at -10% 110%, rgba(60, 90, 130, 0.10), transparent 55%),
+        linear-gradient(160deg, #fbf8f4 0%, #f3ede4 60%, #efe7dc 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6vh 6vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.4rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.12s forwards;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.24s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: 2rem;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s ease 0.36s forwards;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 1.4rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.48s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <span class="accent">Matthias's</span> workspace</h1>
+    <div class="rule"></div>
+    <p class="lede">
+      Everything's set up and ready to go. This is your home base — a quiet place
+      to start building, organizing, and shipping the work that matters.
+    </p>
+    <footer>Powered by Machina</footer>
+  </main>
+</body>
+</html>
