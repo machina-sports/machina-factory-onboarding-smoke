@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to shijiebei</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b6259;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c2410c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", Cambria, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% 8%, #fff6ec 0%, rgba(255, 246, 236, 0) 55%),
+        radial-gradient(140% 120% at 92% 100%, #f0ecff 0%, rgba(240, 236, 255, 0) 50%),
+        linear-gradient(160deg, #fbfaf8 0%, #f3efe9 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      flex: 1;
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.75rem, 11vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.12s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 36ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.26s forwards;
+    }
+
+    .rule {
+      height: 1px;
+      width: 64px;
+      background: var(--ink);
+      margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.25rem, 3vw, 1.75rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s ease 0.4s forwards;
+    }
+
+    footer {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 1.5rem clamp(1.5rem, 6vw, 4rem) 2rem;
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to <span class="accent">shijiebei</span></h1>
+    <div class="rule"></div>
+    <p class="lede">Your workspace is live and ready. Everything from here is yours to build.</p>
+  </main>
+  <footer>
+    <span>shijiebei</span>
+    <span>Powered by Machina</span>
+  </footer>
+</body>
+</html>
