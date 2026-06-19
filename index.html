@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to wc26</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --ink-soft: #5b534c;
+      --accent: #b8442a;
+      --paper: #f4efe7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 10%, #fbf8f2 0%, rgba(251,248,242,0) 55%),
+        radial-gradient(140% 140% at 85% 90%, #efe4d4 0%, rgba(239,228,212,0) 60%),
+        linear-gradient(160deg, #f6f1e9 0%, #ece2d3 100%);
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 64rem;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(0.72rem, 1.6vw, 0.85rem);
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 13vw, 9rem);
+      line-height: 0.95;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      opacity: 0;
+      animation: rise 1s ease 0.25s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 0;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      animation: grow 1s ease 0.6s forwards;
+    }
+
+    p {
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      line-height: 1.65;
+      color: var(--ink-soft);
+      max-width: 38rem;
+      opacity: 0;
+      animation: rise 1s ease 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { width: 0; }
+      to   { width: clamp(4rem, 10vw, 7rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, p { opacity: 1; animation: none; }
+      .rule { width: clamp(4rem, 10vw, 7rem); animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <em>wc26</em></h1>
+    <div class="rule"></div>
+    <p>Your workspace is live. This is a quiet starting point &mdash; clean, fast, and ready for whatever you build next.</p>
+  </main>
+</body>
+</html>
