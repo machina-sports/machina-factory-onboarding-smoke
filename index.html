@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to pablo-teste-2</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c4452d;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 85% -10%, rgba(196, 69, 45, 0.10), transparent 60%),
+        radial-gradient(900px 600px at -10% 110%, rgba(60, 90, 130, 0.10), transparent 55%),
+        linear-gradient(170deg, #fbf8f4 0%, #f3eee6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame {
+      flex: 1;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: clamp(2rem, 8vh, 5rem);
+    }
+
+    .mark {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .badge {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      white-space: nowrap;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 18ch;
+    }
+
+    .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: clamp(1rem, 3vh, 1.75rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.1s;
+    }
+
+    h1 {
+      font-size: clamp(2.9rem, 11vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.25s;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 46ch;
+      margin-top: clamp(1.5rem, 4vh, 2.25rem);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.45s;
+    }
+
+    .rule {
+      height: 1px;
+      background: var(--line);
+      margin-top: clamp(2rem, 6vh, 3.5rem);
+      max-width: 8rem;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.8s ease forwards 0.65s;
+    }
+
+    footer {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: clamp(2rem, 8vh, 4rem);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span class="mark">pablo-teste-2</span>
+      <span class="badge">Onboarding</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Hello there</p>
+      <h1>Welcome to <span class="accent">pablo-teste-2</span></h1>
+      <p class="lede">
+        Your workspace is live and ready. This is the starting point —
+        a clean slate built to grow into whatever comes next.
+      </p>
+      <div class="rule"></div>
+    </main>
+
+    <footer>
+      <span>Machina &middot; Smoke test</span>
+      <span>Ready</span>
+    </footer>
+  </div>
+</body>
+</html>
