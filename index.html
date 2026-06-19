@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Factory Internal Projects</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --ink-soft: #5c544d;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c2410c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% -10%, #fef3ec 0%, rgba(254, 243, 236, 0) 55%),
+        radial-gradient(130% 100% at 100% 0%, #eef2f6 0%, rgba(238, 242, 246, 0) 50%),
+        linear-gradient(180deg, #fbfaf8 0%, #f3f0ea 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 6vw, 6rem);
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 56rem;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      animation: rise 0.9s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 6.5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+      animation: rise 0.9s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .rule {
+      width: clamp(3rem, 10vw, 6rem);
+      height: 3px;
+      background: var(--ink);
+      margin: clamp(1.75rem, 4vw, 2.75rem) 0;
+      animation: grow 1s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+      transform-origin: left;
+    }
+
+    p {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 42ch;
+      animation: rise 0.9s 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    footer {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: rise 0.9s 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Machina Factory</div>
+    <h1>Welcome to <span class="accent">factory internal projects</span></h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p>A quiet starting point for the work ahead. This onboarding smoke test confirms everything is wired up and ready to ship.</p>
+    <footer>
+      <span>Internal · Onboarding</span>
+      <span>Status: Live</span>
+    </footer>
+  </main>
+</body>
+</html>
