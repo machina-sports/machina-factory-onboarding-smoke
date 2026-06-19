@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #0f0e17;
+      --ink-soft: #4a4860;
+      --accent: #5b3df5;
+      --paper: #f7f6fb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 12% -10%, rgba(91, 61, 245, 0.14), transparent 60%),
+        radial-gradient(1000px 700px at 110% 110%, rgba(255, 138, 76, 0.12), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .stage {
+      max-width: 46rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 5.75rem);
+      line-height: 1.02;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.12s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.26s forwards;
+    }
+
+    .rule {
+      width: 4.5rem;
+      height: 2px;
+      background: var(--ink);
+      margin: 2.75rem 0 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.9s ease 0.4s forwards;
+    }
+
+    .footnote {
+      margin-top: 1.25rem;
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.8s ease 0.55s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <p class="eyebrow">Machina · Onboarding</p>
+    <h1>Welcome to <span class="accent">Machina Drops</span></h1>
+    <p class="lede">
+      You're all set. This is the starting line — a quiet, deliberate space
+      where new releases land first. Everything from here is built to ship.
+    </p>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="footnote">SMOKE TEST · v1</p>
+  </main>
+</body>
+</html>
