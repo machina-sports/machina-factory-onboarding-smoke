@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome — dziudziaalbert's workspace</title>
+  <style>
+    :root {
+      --ink: #14141a;
+      --muted: #6b6b78;
+      --line: rgba(20, 20, 26, 0.10);
+      --accent: #4338ca;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(99, 102, 241, 0.18), transparent 60%),
+        radial-gradient(1000px 700px at 100% 110%, rgba(244, 114, 182, 0.14), transparent 55%),
+        linear-gradient(180deg, #fbfbfd 0%, #f3f1ee 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 46rem;
+      width: 100%;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      animation: fade 0.9s ease 0.05s both;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 1.8rem;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    h1 .name {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.18rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+    }
+
+    .meta {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: clamp(1.5rem, 4vw, 2rem);
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main, .eyebrow { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="eyebrow">Workspace · Onboarding</span>
+    <h1>Welcome to <span class="name">dziudziaalbert's</span> workspace</h1>
+    <p class="lede">
+      Everything is set up and ready. This is your starting point — a quiet,
+      uncluttered space to build, ship, and iterate.
+    </p>
+    <div class="meta">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Workspace online</span>
+    </div>
+  </main>
+</body>
+</html>
