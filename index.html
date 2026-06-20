@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Vince's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #b4532a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      background:
+        radial-gradient(120% 120% at 0% 0%, #fbf6ef 0%, rgba(251, 246, 239, 0) 55%),
+        radial-gradient(120% 120% at 100% 100%, #f1e7dd 0%, rgba(241, 231, 221, 0) 50%),
+        linear-gradient(160deg, #fdfaf5 0%, #f3ebe1 100%);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .stage {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+    }
+
+    h1 {
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-size: clamp(2.6rem, 9vw, 5.5rem);
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.1s; }
+    h1 .line:nth-child(2) { animation-delay: 0.22s; }
+
+    h1 .name {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 0;
+      height: 1px;
+      background: var(--line);
+      margin: clamp(1.5rem, 4vw, 2.25rem) 0;
+      animation: grow 1s ease 0.5s forwards;
+    }
+
+    p.lede {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      line-height: 1.6;
+      max-width: 46ch;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.8s ease 0.45s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { width: 0; }
+      to   { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1 .line, p.lede { opacity: 1; animation: none; }
+      .rule { width: 100%; animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <p class="eyebrow">Onboarding · Workspace ready</p>
+    <h1>
+      <span class="line">Welcome to</span>
+      <span class="line"><span class="name">Vince's</span> workspace</span>
+    </h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">Everything's set up and good to go. This is your starting point — clean, quiet, and ready for whatever you build next.</p>
+  </main>
+</body>
+</html>
