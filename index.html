@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome — Sports Interaction Factory Test</title>
+  <style>
+    :root {
+      --ink: #0e1116;
+      --muted: #5b6472;
+      --accent: #1f6feb;
+      --hairline: rgba(14, 17, 22, 0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% 8%, #eef4ff 0%, rgba(238,244,255,0) 55%),
+        radial-gradient(120% 100% at 92% 100%, #fdeef3 0%, rgba(253,238,243,0) 50%),
+        linear-gradient(180deg, #fbfcfe 0%, #f4f6fa 100%);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      flex: 1;
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .kicker {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      opacity: 0;
+      animation: rise 0.8s ease 0.05s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 6rem);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      max-width: 16ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.18s forwards;
+    }
+
+    h1 .em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 48ch;
+      margin-top: clamp(1.5rem, 4vw, 2.25rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.34s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--ink);
+      margin-top: clamp(1.75rem, 4vw, 2.5rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.8s ease 0.5s forwards;
+    }
+
+    footer {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      border-top: 1px solid var(--hairline);
+      padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
+      max-width: 980px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: rise 0.9s ease 0.62s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Onboarding · Smoke Test</p>
+    <h1>Welcome to <span class="em">sports interaction factory test</span></h1>
+    <p class="lede">A minimal, single-file welcome screen — confirming the build pipeline ships cleanly from end to end.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </main>
+  <footer>
+    <span>Sports Interaction</span>
+    <span>Factory · status OK</span>
+  </footer>
+</body>
+</html>
