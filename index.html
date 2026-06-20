@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Robin's workspace</title>
+  <style>
+    :root {
+      --ink: #16130f;
+      --muted: #6b635a;
+      --accent: #b8442a;
+      --paper: #f6f1e9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 82% -8%, rgba(184, 68, 42, 0.10), transparent 60%),
+        radial-gradient(900px 600px at -5% 110%, rgba(58, 90, 120, 0.10), transparent 55%),
+        linear-gradient(160deg, #faf6ef 0%, var(--paper) 48%, #efe7da 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8vw 6vw;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .stage {
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      margin-bottom: 1.8rem;
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      animation: rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.22s; }
+    h1 .line:nth-child(2) { animation-delay: 0.36s; }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--ink);
+      margin: 0 0 1.6rem;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.55s forwards;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 48ch;
+      opacity: 0;
+      animation: rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1 .line, p.lede { animation: none; opacity: 1; }
+      .rule { animation: none; transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <p class="eyebrow">Onboarding · Workspace</p>
+    <h1>
+      <span class="line">Welcome to</span>
+      <span class="line"><em>Robin's</em> workspace</span>
+    </h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">Everything's set up and ready to go. This is your space — clean, calm, and yours to build in.</p>
+  </main>
+</body>
+</html>
