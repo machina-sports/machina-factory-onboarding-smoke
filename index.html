@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome to Felipe's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b6357;
+      --accent: #b4532a;
+      --paper: #f7f3ec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, #fbeede 0%, rgba(251,238,222,0) 55%),
+        radial-gradient(1000px 700px at 110% 120%, #e8ddff 0%, rgba(232,221,255,0) 50%),
+        linear-gradient(160deg, #f9f5ee 0%, #f1ebe0 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      overflow-x: hidden;
+    }
+
+    .stage {
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 5.5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s forwards;
+    }
+
+    h1 .name {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--accent);
+      margin: clamp(2rem, 5vw, 3rem) 0 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lede, .rule {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <p class="eyebrow">Onboarding · Workspace</p>
+    <h1>Welcome to <span class="name">Felipe's</span> workspace</h1>
+    <p class="lede">Everything's set up and ready to go. This is your starting point — a quiet space to build, ship, and iterate.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
