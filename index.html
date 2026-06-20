@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to mawencheng601x's workspace</title>
+  <style>
+    :root {
+      --ink: #15141a;
+      --ink-soft: #5a5664;
+      --line: rgba(21, 20, 26, 0.1);
+      --accent: #6d4aff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 12% -10%, rgba(109, 74, 255, 0.14), transparent 60%),
+        radial-gradient(1000px 700px at 100% 110%, rgba(255, 138, 76, 0.12), transparent 55%),
+        linear-gradient(180deg, #fbfaff 0%, #f3f1fb 100%);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    main {
+      max-width: 56rem;
+      width: 100%;
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      animation: rise 0.9s 0.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: clamp(2rem, 6vw, 3.5rem);
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.6rem, 9vw, 6rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      animation: rise 0.9s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    h1 .name {
+      font-style: italic;
+      background: linear-gradient(120deg, var(--accent), #ff8a4c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 38rem;
+      animation: rise 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .meta {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      animation: rise 0.9s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2ec27e;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <main>
+      <div class="eyebrow">Workspace · Onboarding</div>
+      <h1>Welcome to <span class="name">mawencheng601x's</span> workspace</h1>
+      <p class="lede">
+        Everything's set up and ready. This is your starting point — a quiet,
+        deliberate space to build, ship, and iterate.
+      </p>
+      <div class="meta">
+        <span><span class="dot"></span> Environment ready</span>
+        <span>Single-page · No build step</span>
+        <span>Machina Factory</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
