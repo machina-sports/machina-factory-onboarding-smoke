@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to factory fix test</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --accent: #c2410c;
+      --bg-1: #fdf8f3;
+      --bg-2: #f3ece4;
+      --bg-3: #eef2f7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 10% 0%, var(--bg-1) 0%, transparent 55%),
+        radial-gradient(120% 120% at 90% 100%, var(--bg-3) 0%, transparent 50%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 56rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.7s ease-out 0.05s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.85rem;
+      transform: translateY(-1px);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 6rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.15s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 38rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.3s forwards;
+    }
+
+    .rule {
+      height: 1px;
+      width: 100%;
+      max-width: 38rem;
+      background: linear-gradient(90deg, rgba(20,17,15,0.18), transparent);
+      margin: clamp(2rem, 5vw, 3rem) 0 1.25rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.45s forwards;
+    }
+
+    .meta {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.55s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, p.lede, .rule, .meta { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding smoke test</p>
+    <h1>Welcome to <span class="accent">factory fix test</span></h1>
+    <p class="lede">
+      Everything is wired and running. This minimal welcome screen confirms the
+      build pipeline ships a clean, self-contained page — no build step, no
+      dependencies, just HTML.
+    </p>
+    <div class="rule"></div>
+    <p class="meta">Single file · Zero dependencies · Ready to deploy</p>
+  </main>
+</body>
+</html>
