@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to 363495881's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b6259;
+      --accent: #b4532a;
+      --paper: #f6f1e9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(180, 83, 42, 0.10), transparent 45%),
+        radial-gradient(circle at 85% 88%, rgba(34, 60, 84, 0.08), transparent 50%),
+        linear-gradient(160deg, #fbf7f0 0%, var(--paper) 55%, #efe6d8 100%);
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 56rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: clamp(0.65rem, 1.6vw, 0.78rem);
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    .rule {
+      width: 3.5rem;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.9s ease 0.15s forwards;
+    }
+
+    h1 {
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      font-size: clamp(2.6rem, 9vw, 6rem);
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.25s forwards;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    p.lede {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      max-width: 36rem;
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      line-height: 1.65;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease 0.4s forwards;
+    }
+
+    footer {
+      position: fixed;
+      bottom: clamp(1.25rem, 4vw, 2.5rem);
+      left: clamp(1.5rem, 5vw, 4rem);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease 0.6s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Workspace · Onboarding</p>
+    <div class="rule" aria-hidden="true"></div>
+    <h1>Welcome to <span class="accent">363495881's</span> workspace</h1>
+    <p class="lede">Everything is set up and ready to go. This is your starting point — a calm, clean canvas for the work ahead.</p>
+  </main>
+  <footer>Machina · Smoke test</footer>
+</body>
+</html>
