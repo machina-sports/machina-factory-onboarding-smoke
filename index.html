@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Test org 2</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #b4541f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 12% -10%, #fbeede 0%, rgba(251, 238, 222, 0) 55%),
+        radial-gradient(1000px 700px at 110% 120%, #e9e2f5 0%, rgba(233, 226, 245, 0) 55%),
+        linear-gradient(160deg, #fdfcfa 0%, #f6f1ea 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 720px;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: clamp(0.62rem, 1.6vw, 0.75rem);
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.4rem, 4vw, 2.2rem);
+      opacity: 0;
+      animation: rise 0.8s ease 0.1s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 2.2rem;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.2rem, 3.5vw, 1.8rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.25s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      margin-bottom: clamp(2rem, 6vw, 3rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.4s forwards;
+    }
+
+    .footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      padding-top: clamp(1.2rem, 3vw, 1.6rem);
+      border-top: 1px solid var(--line);
+      opacity: 0;
+      animation: rise 0.9s ease 0.55s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, p.lede, .footer {
+        animation: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <em>Test&nbsp;org&nbsp;2</em></h1>
+    <p class="lede">
+      Your workspace is ready. This is where ideas take shape — clean,
+      considered, and built to move at your pace.
+    </p>
+    <p class="footer">Powered by Machina</p>
+  </main>
+</body>
+</html>
