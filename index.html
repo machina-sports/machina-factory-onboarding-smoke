@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to ENTAIN Organization</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --muted: #5b6168;
+      --line: rgba(15, 17, 21, 0.10);
+      --accent: #1f6feb;
+      --bg-0: #fbfbfd;
+      --bg-1: #eef1f7;
+      --bg-2: #e7ecf6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 78% -8%, var(--bg-2) 0%, rgba(231, 236, 246, 0) 60%),
+        radial-gradient(900px 600px at 6% 108%, var(--bg-1) 0%, rgba(238, 241, 247, 0) 55%),
+        linear-gradient(180deg, var(--bg-0) 0%, #f4f6fa 100%);
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+    }
+
+    main {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      margin-top: 1.6rem;
+      font-size: clamp(2.75rem, 9vw, 5.75rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: rise 0.8s ease 0.12s forwards;
+    }
+
+    h1 .accent {
+      display: block;
+      background: linear-gradient(92deg, var(--accent), #6a4cf0 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lede {
+      margin-top: 1.8rem;
+      max-width: 52ch;
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.8s ease 0.24s forwards;
+    }
+
+    .rule {
+      margin-top: 2.6rem;
+      height: 1px;
+      width: 100%;
+      max-width: 220px;
+      background: var(--line);
+      opacity: 0;
+      animation: rise 0.8s ease 0.34s forwards;
+    }
+
+    footer {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 5vw, 5rem);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lede, .rule { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <main>
+      <span class="eyebrow">Onboarding</span>
+      <h1>Welcome to<span class="accent">ENTAIN Organization</span></h1>
+      <p class="lede">
+        Your workspace is live and ready. This is the starting point for building
+        agents, workflows, and intelligence on the Machina platform.
+      </p>
+      <div class="rule"></div>
+    </main>
+  </div>
+  <footer>
+    <span>ENTAIN Organization</span>
+    <span>Powered by Machina</span>
+  </footer>
+</body>
+</html>
