@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Codex World Cup</title>
+  <style>
+    :root {
+      --ink: #0e1116;
+      --muted: #5b6472;
+      --accent: #1b6e4f;
+      --line: rgba(14, 17, 22, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, #eef6f1 0%, rgba(238, 246, 241, 0) 60%),
+        radial-gradient(1000px 700px at 110% 10%, #f3eee6 0%, rgba(243, 238, 230, 0) 55%),
+        linear-gradient(180deg, #fbfaf7 0%, #f4f3ef 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7vh 6vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .stage {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .kicker {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 5.6rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.12s;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.24s;
+    }
+
+    .rule {
+      width: 56px;
+      height: 2px;
+      background: var(--ink);
+      margin: 2.8rem 0;
+      opacity: 0;
+      animation: grow 0.9s ease forwards;
+      animation-delay: 0.36s;
+    }
+
+    .foot {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.4rem;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.48s;
+    }
+
+    .foot span { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); transform-origin: left; }
+      to   { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .kicker, h1, .lede, .rule, .foot { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <p class="kicker">Onboarding · Smoke Test</p>
+    <h1>Welcome to <em>Codex World Cup</em></h1>
+    <div class="rule"></div>
+    <p class="lede">
+      Your workspace is live and ready. This is a minimal starting point —
+      a clean slate from which the real tournament coverage will grow.
+    </p>
+    <div class="foot">
+      <span><span class="dot"></span>Single file</span>
+      <span><span class="dot"></span>No build step</span>
+      <span><span class="dot"></span>Zero dependencies</span>
+    </div>
+  </main>
+</body>
+</html>
