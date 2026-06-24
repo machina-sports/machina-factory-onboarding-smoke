@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Xavier's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c2410c;
+      --paper: #f6f2ec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 700px at 85% -10%, rgba(194, 65, 12, 0.10), transparent 60%),
+        radial-gradient(900px 600px at -10% 110%, rgba(30, 58, 138, 0.08), transparent 55%),
+        linear-gradient(180deg, #fbf8f3 0%, var(--paper) 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .frame {
+      flex: 1;
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    .eyebrow {
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.4rem;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.75rem, 11vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin-top: 0.4rem;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 44ch;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      padding-top: clamp(1.5rem, 4vw, 2.25rem);
+      border-top: 1px solid var(--line);
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .meta strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Staggered load-in */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+    .reveal.d1 { animation-delay: 0.05s; }
+    .reveal.d2 { animation-delay: 0.18s; }
+    .reveal.d3 { animation-delay: 0.32s; }
+    .reveal.d4 { animation-delay: 0.46s; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <p class="eyebrow reveal d1">Onboarding · Workspace ready</p>
+
+    <h1 class="reveal d2">
+      Welcome to<br />
+      <span class="accent">Xavier's</span> workspace
+    </h1>
+
+    <p class="lede reveal d3">
+      Everything is set up and running. This is your space to build,
+      experiment, and ship — clean slate, no clutter, ready when you are.
+    </p>
+
+    <div class="meta reveal d4">
+      <div>
+        Status
+        <strong>Live</strong>
+      </div>
+      <div>
+        Environment
+        <strong>Workspace</strong>
+      </div>
+      <div>
+        Owner
+        <strong>Xavier</strong>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
