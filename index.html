@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Adidas</title>
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --muted: #6b6b6b;
+      --line: rgba(10, 10, 10, 0.12);
+      --bg-1: #fafafa;
+      --bg-2: #eef1f4;
+      --bg-3: #e6eaf0;
+      --accent: #0a0a0a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 12% 8%, var(--bg-1) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle grain/depth layer */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(60% 50% at 85% 100%, rgba(10,10,10,0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .frame {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+    }
+
+    /* Top bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .brand {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.4rem 0.85rem;
+    }
+
+    /* Hero */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1100px;
+      padding: clamp(2rem, 8vh, 6rem) 0;
+    }
+
+    .eyebrow {
+      font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 13vw, 10rem);
+      line-height: 0.92;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-transform: none;
+    }
+
+    h1 .line {
+      display: block;
+      overflow: hidden;
+    }
+
+    h1 .line span {
+      display: block;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    h1 .line:nth-child(1) span { animation-delay: 0.18s; }
+    h1 .line:nth-child(2) span { animation-delay: 0.32s; }
+
+    h1 .accent {
+      font-style: italic;
+      font-weight: 400;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -0.01em;
+    }
+
+    .sub {
+      margin-top: clamp(1.5rem, 4vw, 2.5rem);
+      max-width: 38ch;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--muted);
+      animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+    }
+
+    .rule {
+      width: clamp(3rem, 8vw, 5rem);
+      height: 2px;
+      background: var(--accent);
+      margin-top: clamp(1.75rem, 4vw, 2.5rem);
+      transform-origin: left;
+      animation: grow 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: clamp(1.5rem, 4vw, 2.5rem);
+      border-top: 1px solid var(--line);
+      animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+    }
+
+    footer .dots { display: flex; gap: 0.4rem; align-items: center; }
+    footer .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.85; }
+    footer .dot:nth-child(2) { opacity: 0.45; }
+    footer .dot:nth-child(3) { opacity: 0.2; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes rise {
+      from { transform: translateY(105%); }
+      to   { transform: translateY(0); }
+    }
+    @keyframes grow {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header class="topbar">
+      <div class="brand">Adidas</div>
+      <div class="tag">Onboarding</div>
+    </header>
+
+    <main class="hero">
+      <p class="eyebrow">Hello &middot; Welcome aboard</p>
+      <h1>
+        <span class="line"><span>Welcome to</span></span>
+        <span class="line"><span class="accent">Adidas</span></span>
+      </h1>
+      <p class="sub">
+        You&rsquo;re all set. This is the start of something built for speed,
+        craft, and the people who push limits.
+      </p>
+      <div class="rule" aria-hidden="true"></div>
+    </main>
+
+    <footer>
+      <span>Welcome screen</span>
+      <span class="dots" aria-hidden="true">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </span>
+      <span>Impossible is nothing</span>
+    </footer>
+  </div>
+</body>
+</html>
