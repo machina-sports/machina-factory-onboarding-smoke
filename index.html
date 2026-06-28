@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Do's workspace</title>
+  <style>
+    :root {
+      --ink: #14131a;
+      --muted: #6b6878;
+      --accent: #5b54e6;
+      --bg-1: #f6f5fb;
+      --bg-2: #eef0fb;
+      --bg-3: #fbf3f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 12% 8%, var(--bg-3), transparent 55%),
+        radial-gradient(1000px 700px at 88% 92%, var(--bg-2), transparent 55%),
+        linear-gradient(160deg, var(--bg-1), #ffffff 70%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.1s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.25s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: 2.5rem 0 2rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.4s forwards;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease 0.55s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <span class="accent">Do's</span> workspace</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">Your space is ready. Everything starts here — clean, quiet, and built to get out of your way.</p>
+    <footer>Powered by Machina</footer>
+  </main>
+</body>
+</html>
