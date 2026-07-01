@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to World Cup Score Parlay</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --ink-soft: #4a4f5a;
+      --accent: #1b6b4a;
+      --accent-2: #c9a227;
+      --paper: #fbfaf7;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 0%, rgba(27, 107, 74, 0.10) 0%, rgba(27, 107, 74, 0) 45%),
+        radial-gradient(100% 100% at 100% 100%, rgba(201, 162, 39, 0.12) 0%, rgba(201, 162, 39, 0) 50%),
+        linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 46rem;
+      text-align: left;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 1.75rem;
+      opacity: 0;
+      animation: rise 0.7s ease-out 0.05s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.25rem;
+      height: 1px;
+      background: currentColor;
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.5rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.18s forwards;
+    }
+
+    h1 .accent {
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      margin: 0 0 2.5rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.32s forwards;
+    }
+
+    .footnote {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.46s forwards;
+    }
+
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.18);
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow,
+      h1,
+      p.lede,
+      .footnote {
+        animation: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">World Cup 26</p>
+    <h1>Welcome to <span class="accent">World Cup Score Parlay</span></h1>
+    <p class="lede">
+      Your onboarding is live. This is the starting line — build predictions,
+      stack scorelines, and chase the perfect parlay across the tournament.
+    </p>
+    <div class="footnote">
+      <span class="dot" aria-hidden="true"></span>
+      System ready · onboarding smoke test passed
+    </div>
+  </main>
+</body>
+</html>
