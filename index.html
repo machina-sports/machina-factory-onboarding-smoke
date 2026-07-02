@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to maquina503sa's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #b4471f;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(180, 71, 31, 0.10), transparent 60%),
+        radial-gradient(900px 500px at -10% 110%, rgba(64, 92, 120, 0.12), transparent 55%),
+        linear-gradient(180deg, #fbf9f6 0%, #f3efe9 100%);
+      background-color: #faf8f4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(180, 71, 31, 0.14);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 8vh, 6rem) 0;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      max-width: 15ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.12s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      margin-top: clamp(1.5rem, 4vw, 2.5rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.24s forwards;
+    }
+
+    .rule {
+      height: 1px;
+      background: var(--line);
+      margin-top: clamp(2rem, 6vw, 3.5rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 1s ease 0.4s forwards;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease 0.55s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span class="badge"><span class="dot"></span> Machina Workspace</span>
+      <span>Onboarding</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">You're in</p>
+      <h1>Welcome to <span class="accent">maquina503sa's</span> workspace</h1>
+      <p class="lede">Everything's wired up and ready. This is your starting point — a clean slate for building, shipping, and iterating.</p>
+      <div class="rule"></div>
+    </main>
+
+    <footer>
+      <span>Powered by Machina</span>
+      <span>Smoke test · v1</span>
+    </footer>
+  </div>
+</body>
+</html>
