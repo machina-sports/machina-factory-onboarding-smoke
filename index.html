@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #0e0f13;
+      --muted: #565a66;
+      --accent: #3a2fff;
+      --paper: #f7f6f2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(58, 47, 255, 0.10), transparent 60%),
+        radial-gradient(900px 600px at 110% 120%, rgba(255, 96, 64, 0.10), transparent 55%),
+        var(--paper);
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 60ms;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 5.5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 140ms;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.375rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 220ms;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--ink);
+      margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.25rem, 3vw, 1.75rem);
+      animation: grow 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 300ms;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 380ms;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); transform-origin: left; }
+      to   { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Machina · Onboarding</p>
+    <h1>Welcome to <span class="accent">Machina Drops</span></h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">
+      Your workspace is live. This is the first drop — a quiet start before the
+      good stuff arrives. Everything from here is built to ship.
+    </p>
+    <footer>Smoke test passed · v1.0</footer>
+  </main>
+</body>
+</html>
