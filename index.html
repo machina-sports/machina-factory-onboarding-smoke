@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to hermes</title>
+  <style>
+    :root {
+      --ink: #16130f;
+      --ink-soft: #6b625a;
+      --line: rgba(22, 19, 15, 0.12);
+      --accent: #c2410c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #fbeee2 0%, rgba(251, 238, 226, 0) 55%),
+        radial-gradient(1000px 900px at 100% 110%, #eef1f4 0%, rgba(238, 241, 244, 0) 60%),
+        linear-gradient(160deg, #fdfcfa 0%, #f5f2ec 100%);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .frame {
+      flex: 1;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 5.5rem) clamp(1.5rem, 6vw, 4rem);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    header .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      margin-right: 0.6rem;
+      vertical-align: middle;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 8vw, 5rem) 0;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1.2rem, 3vw, 2rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.1s;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 13vw, 7.5rem);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.22s;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 34ch;
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.36s;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: clamp(1.5rem, 4vw, 2.5rem);
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.5s;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+
+    @media (max-width: 480px) {
+      footer { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span><span class="dot"></span>hermes</span>
+      <span>Onboarding</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Getting started</p>
+      <h1>Welcome to <em>hermes</em></h1>
+      <p class="lede">Everything is up and running. This is your starting point &mdash; clean, quiet, and ready for what comes next.</p>
+    </main>
+
+    <footer>
+      <span>Smoke test &middot; Passed</span>
+      <span>v1.0</span>
+    </footer>
+  </div>
+</body>
+</html>
