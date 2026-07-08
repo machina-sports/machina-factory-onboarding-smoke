@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome to Gustavo's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c2410c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 0%, #fdf6ec 0%, transparent 55%),
+        radial-gradient(130% 130% at 100% 100%, #f3e7dd 0%, transparent 50%),
+        linear-gradient(160deg, #fbf7f2 0%, #f2ece4 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 46rem;
+      width: 100%;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: fade 0.8s ease 0.15s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      font-weight: 700;
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fade 0.9s ease 0.3s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      margin-top: 1.75rem;
+      max-width: 34rem;
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      opacity: 0;
+      animation: fade 0.9s ease 0.5s forwards;
+    }
+
+    .rule {
+      margin-top: 2.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      opacity: 0;
+      animation: fade 0.9s ease 0.7s forwards;
+    }
+
+    .rule::before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .rule span {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(18px); }
+      to   { transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main, .eyebrow, h1, .lede, .rule { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding · Ready</p>
+    <h1>Welcome to <em>Gustavo's</em> workspace</h1>
+    <p class="lede">
+      Everything is set up and running. This is your starting point — a quiet,
+      uncluttered space to build from.
+    </p>
+    <div class="rule"><span>Machina</span></div>
+  </main>
+</body>
+</html>
