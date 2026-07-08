@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Lin's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --accent: #b3542a;
+      --paper: #f6f1ea;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(179, 84, 42, 0.10), transparent 45%),
+        radial-gradient(circle at 88% 82%, rgba(43, 74, 110, 0.10), transparent 45%),
+        linear-gradient(160deg, #f9f5ef 0%, #efe7dc 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.1s;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.2rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.25s;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.45s;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--accent);
+      margin: 2.5rem 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s ease forwards 0.65s;
+    }
+
+    .meta {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.85s;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <span class="accent">Lin's</span> workspace</h1>
+    <div class="rule" role="presentation"></div>
+    <p class="lede">Everything you need, laid out with room to think. Take a breath, look around, and start where it feels right.</p>
+    <p class="meta">A clean start &middot; Machina</p>
+  </main>
+</body>
+</html>
