@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welcome to ENTAIN Organization</title>
+<style>
+  :root {
+    --ink: #14151a;
+    --muted: #5b5f6b;
+    --accent: #2f6bff;
+    --line: rgba(20, 21, 26, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    min-height: 100vh;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 600px at 15% -10%, #eef3ff 0%, rgba(238, 243, 255, 0) 55%),
+      radial-gradient(1000px 700px at 100% 110%, #fdeef4 0%, rgba(253, 238, 244, 0) 50%),
+      linear-gradient(180deg, #fbfbfd 0%, #f4f5f8 100%);
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .frame {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7vh 24px;
+  }
+
+  main {
+    max-width: 760px;
+    width: 100%;
+    text-align: center;
+    animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .eyebrow {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 80ms;
+  }
+
+  h1 {
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    font-size: clamp(2.6rem, 8vw, 5.5rem);
+    animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 160ms;
+  }
+
+  h1 .brand {
+    display: block;
+    font-style: italic;
+    background: linear-gradient(120deg, #2f6bff 0%, #7a3ff2 45%, #e0457b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  p.lede {
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 52ch;
+    margin: 2rem auto 0;
+    animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 260ms;
+  }
+
+  .rule {
+    width: 56px;
+    height: 2px;
+    margin: 3rem auto 0;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 340ms;
+  }
+
+  footer {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    padding: 2rem 24px 2.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    main, .eyebrow, h1, p.lede, .rule { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <main>
+      <p class="eyebrow">Onboarding &middot; Machina Studio</p>
+      <h1>Welcome to<span class="brand">ENTAIN Organization</span></h1>
+      <p class="lede">Your workspace is ready. This is a minimal onboarding smoke test — clean, fast, and built to confirm everything is wired up correctly.</p>
+      <div class="rule"></div>
+    </main>
+  </div>
+  <footer>ENTAIN Organization</footer>
+</body>
+</html>
