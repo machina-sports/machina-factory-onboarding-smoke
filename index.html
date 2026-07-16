@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to ENTAIN Organization</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --ink-soft: #4a4f5a;
+      --accent: #2b6cff;
+      --bg-1: #f6f7fb;
+      --bg-2: #eef1f8;
+      --bg-3: #e7ecff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6vw 6vw;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 10%, var(--bg-3) 0%, transparent 55%),
+        radial-gradient(140% 140% at 85% 90%, var(--bg-2) 0%, transparent 50%),
+        linear-gradient(160deg, var(--bg-1) 0%, #ffffff 60%, var(--bg-2) 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      text-align: left;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      animation: fade 900ms ease both;
+      animation-delay: 120ms;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.2rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: 200ms;
+    }
+
+    h1 .accent {
+      display: block;
+      color: var(--accent);
+    }
+
+    p {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 52ch;
+      animation: fade 900ms ease both;
+      animation-delay: 340ms;
+    }
+
+    .rule {
+      margin-top: 2.6rem;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(15,17,21,0.18), transparent);
+      animation: fade 900ms ease both;
+      animation-delay: 460ms;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">Onboarding</span>
+    <h1>Welcome to<span class="accent">ENTAIN Organization</span></h1>
+    <p>Your workspace is live. This is a minimal onboarding smoke test — everything is up and running, and you're ready to start building.</p>
+    <div class="rule" role="presentation"></div>
+  </main>
+</body>
+</html>
