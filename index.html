@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Ciaran's workspace</title>
+  <style>
+    :root {
+      --ink: #14141a;
+      --ink-soft: #55555f;
+      --line: #e4e2dd;
+      --accent: #c8553d;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      color: var(--ink);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      background:
+        radial-gradient(120% 120% at 15% 0%, #fdf7ee 0%, transparent 55%),
+        radial-gradient(130% 130% at 100% 100%, #f2e9f7 0%, transparent 50%),
+        linear-gradient(160deg, #faf8f4 0%, #f4efe8 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 46rem;
+      width: 100%;
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+      animation: fade 0.9s ease 0.1s both;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.25rem;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.75rem, 9vw, 5.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      animation: fade 0.9s ease 0.2s both;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    p {
+      margin-top: clamp(1.5rem, 4vw, 2.25rem);
+      max-width: 34rem;
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.7;
+      color: var(--ink-soft);
+      animation: fade 0.9s ease 0.35s both;
+    }
+
+    footer {
+      margin-top: clamp(2.75rem, 6vw, 4rem);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      animation: fade 0.9s ease 0.5s both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Workspace &middot; Onboarding</div>
+    <h1>Welcome to <span class="accent">Ciaran&rsquo;s</span> workspace</h1>
+    <p>Everything is set up and ready to go. This is your starting point &mdash; a quiet, focused space to build what comes next.</p>
+    <footer>Ready when you are.</footer>
+  </main>
+</body>
+</html>
