@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to fernando's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --accent: #b8492f;
+      --paper: #f6f1ea;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(120% 120% at 15% 0%, #fbf7f0 0%, transparent 55%),
+        radial-gradient(130% 130% at 90% 100%, #efe4d6 0%, transparent 50%),
+        linear-gradient(160deg, #f8f3ec 0%, #ece0d1 100%);
+      overflow-x: hidden;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.25s forwards;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    .sub {
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.45s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--accent);
+      margin: 2.5rem 0 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s ease-out 0.7s forwards;
+    }
+
+    .footnote {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.85s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding &middot; Workspace</p>
+    <h1>Welcome to <span class="accent">fernando&rsquo;s</span> workspace</h1>
+    <p class="sub">Everything is set up and ready to go. This is your starting point &mdash; a quiet place to build, ship, and iterate.</p>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="footnote">Machina &middot; Smoke test passed</p>
+  </main>
+</body>
+</html>
