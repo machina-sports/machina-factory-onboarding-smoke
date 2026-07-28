@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Sid's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --accent: #c2410c;
+      --paper: #f7f3ee;
+      --paper-2: #efe7dd;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 12% -10%, #fbf8f3 0%, rgba(251,248,243,0) 55%),
+        radial-gradient(1000px 800px at 110% 120%, #f0e4d6 0%, rgba(240,228,214,0) 60%),
+        linear-gradient(160deg, var(--paper) 0%, var(--paper-2) 100%);
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 6rem);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      opacity: 0;
+      animation: rise 0.8s ease 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 9vw, 5.5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.25s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 64px;
+      height: 3px;
+      background: var(--ink);
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s ease 0.55s forwards;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.7s forwards;
+    }
+
+    footer {
+      position: fixed;
+      bottom: clamp(1.25rem, 4vw, 2.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 1s ease 0.95s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .rule, p.lede, footer { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding · Ready</p>
+    <h1>Welcome to<br /><span class="accent">Sid's</span> workspace</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">A calm place to build, think, and ship. Everything's set up and standing by — start whenever you're ready.</p>
+  </main>
+  <footer>Machina · Workspace</footer>
+</body>
+</html>
