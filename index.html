@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Rodrigo Teste</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c2410c;
+      --paper: #f7f4ef;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 85% -10%, rgba(194, 65, 12, 0.10), transparent 60%),
+        radial-gradient(1000px 700px at -10% 110%, rgba(37, 99, 235, 0.08), transparent 55%),
+        linear-gradient(180deg, #fbf9f5 0%, var(--paper) 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 6vw, 4rem);
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 10vw, 6rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.2s; }
+    h1 .line:nth-child(2) { animation-delay: 0.34s; }
+
+    h1 .name {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+    }
+
+    .rule {
+      height: 1px;
+      width: 100%;
+      background: var(--line);
+      margin: clamp(2.5rem, 6vw, 4rem) 0 1.5rem;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: draw 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.65s forwards;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes draw {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Onboarding &middot; Getting started</p>
+    <h1>
+      <span class="line">Welcome to</span>
+      <span class="line name">Rodrigo Teste</span>
+    </h1>
+    <p class="lede">
+      Everything is set up and running. This is your starting point &mdash; clean, quiet, and ready for whatever comes next.
+    </p>
+    <div class="rule"></div>
+    <footer>
+      <span>Rodrigo Teste</span>
+      <span>Onboarding smoke test</span>
+    </footer>
+  </main>
+</body>
+</html>
