@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to anti gremio</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --muted: #5c6470;
+      --line: rgba(15, 17, 21, 0.08);
+      --accent: #d81e2c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6vw 6vw 8vw;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 15% -10%, #fdeff0 0%, rgba(253, 239, 240, 0) 55%),
+        radial-gradient(1000px 700px at 100% 110%, #eef1f7 0%, rgba(238, 241, 247, 0) 50%),
+        linear-gradient(180deg, #fbfbfc 0%, #f4f5f8 100%);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.05s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.9rem;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2.6rem, 8vw, 5.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.18s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    p.lede {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.18rem);
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.32s forwards;
+    }
+
+    .rule {
+      margin-top: 3rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease 0.46s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <span class="accent">anti gremio</span></h1>
+    <p class="lede">You're all set. This is a minimal welcome screen — clean, fast, and ready to grow into whatever comes next.</p>
+    <div class="rule">Smoke test passed &nbsp;·&nbsp; Single file &nbsp;·&nbsp; No dependencies</div>
+  </main>
+</body>
+</html>
