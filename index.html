@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to pablo-test</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625a;
+      --accent: #c2410c;
+      --paper: #faf7f2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, #fdece1 0%, rgba(253,236,225,0) 55%),
+        radial-gradient(1000px 700px at 110% 20%, #eef1f8 0%, rgba(238,241,248,0) 50%),
+        linear-gradient(160deg, var(--paper) 0%, #f2ede5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 46rem;
+      width: 100%;
+      text-align: left;
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      animation-delay: 60ms;
+    }
+
+    h1 {
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      font-size: clamp(2.75rem, 11vw, 6.5rem);
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    h1 .name {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    .rule {
+      width: 3.5rem;
+      height: 3px;
+      background: var(--ink);
+      margin: clamp(2rem, 5vw, 3rem) 0 0;
+      border-radius: 2px;
+    }
+
+    .eyebrow, h1, p.lede, .rule {
+      animation: rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    h1 { animation-delay: 120ms; }
+    p.lede { animation-delay: 220ms; }
+    .rule { animation-delay: 320ms; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding · Machina</p>
+    <h1>Welcome to<span class="name">pablo-test</span></h1>
+    <p class="lede">You're all set. This is a minimal welcome screen — a quick smoke test to confirm everything is wired up and ready to go.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
