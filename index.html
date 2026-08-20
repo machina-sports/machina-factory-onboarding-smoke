@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #0e0e11;
+      --muted: #6a6a76;
+      --line: rgba(14, 14, 17, 0.08);
+      --accent: #4b3bff;
+      --paper: #f6f5f2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background: var(--paper);
+      background-image:
+        radial-gradient(1200px 600px at 12% -5%, rgba(75, 59, 255, 0.10), transparent 60%),
+        radial-gradient(1000px 700px at 100% 110%, rgba(255, 122, 89, 0.10), transparent 55%),
+        linear-gradient(180deg, #faf9f6 0%, #f1efe9 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.2rem;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.75rem, 9vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.1s; }
+    h1 .line:nth-child(2) { animation-delay: 0.22s; }
+
+    h1 .drops {
+      font-style: italic;
+      background: linear-gradient(100deg, var(--accent), #8a3bff 55%, #ff7a59);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.36s forwards;
+    }
+
+    .foot {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.5rem clamp(1.5rem, 5vw, 3rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: rise 0.9s ease 0.5s forwards;
+    }
+
+    .foot .dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .foot .dot::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #35c07a;
+      box-shadow: 0 0 0 4px rgba(53, 192, 122, 0.15);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <span class="eyebrow">Onboarding · Smoke Test</span>
+    <h1>
+      <span class="line">Welcome to</span>
+      <span class="line drops">Machina Drops</span>
+    </h1>
+    <p class="lede">
+      Your workspace is live and wired up. This is the starting line — from
+      here, everything ships.
+    </p>
+  </main>
+  <footer class="foot">
+    <span class="dot">System online</span>
+    <span>Machina Drops</span>
+  </footer>
+</body>
+</html>
