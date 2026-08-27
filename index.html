@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Kind's workspace</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b625b;
+      --accent: #b4532a;
+      --paper: #f6f2ec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 15% 10%, #fbf8f3 0%, rgba(251,248,243,0) 55%),
+        radial-gradient(130% 100% at 90% 90%, #efe6d8 0%, rgba(239,230,216,0) 50%),
+        linear-gradient(160deg, #f8f4ee 0%, #efe7db 45%, #e7dccb 100%);
+      background-color: var(--paper);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8vw 6vw;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.1s forwards;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.8rem, 9vw, 5.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.25s forwards;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 46ch;
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.45s forwards;
+    }
+
+    .rule {
+      width: 68px;
+      height: 2px;
+      background: var(--accent);
+      margin: 2.6rem 0 0;
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.6s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lede, .rule { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to <span class="accent">Kind&rsquo;s</span> workspace</h1>
+    <p class="lede">Everything is set up and ready. This is your starting point &mdash; a quiet, clean space to begin building.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </main>
+</body>
+</html>
