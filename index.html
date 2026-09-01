@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Forma</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --ink-soft: #4a423b;
+      --ink-faint: #8a8078;
+      --paper: #f6f1ea;
+      --accent: #c8452a;
+      --line: rgba(20, 17, 15, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: var(--paper);
+      background-image:
+        radial-gradient(120% 120% at 15% 0%, #fbf7f1 0%, rgba(251, 247, 241, 0) 45%),
+        radial-gradient(130% 130% at 100% 100%, #efe3d4 0%, rgba(239, 227, 212, 0) 50%),
+        linear-gradient(160deg, #f8f3ec 0%, #efe6da 60%, #e9ddce 100%);
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 5vw, 3.5rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+    }
+
+    .mark {
+      font-size: 0.95rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .mark .dot { color: var(--accent); }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2.5rem, 8vh, 6rem) 0;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 600;
+      margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s forwards;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 2.4rem;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(3.25rem, 13vw, 9.5rem);
+      line-height: 0.92;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    h1 .line { display: block; overflow: hidden; }
+
+    h1 .line span {
+      display: block;
+      transform: translateY(105%);
+      animation: reveal 1s cubic-bezier(0.2, 0.85, 0.15, 1) forwards;
+    }
+
+    h1 .line:nth-child(1) span { animation-delay: 0.35s; }
+    h1 .line:nth-child(2) span { animation-delay: 0.5s; }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      max-width: 34ch;
+      margin-top: clamp(1.75rem, 4vh, 2.75rem);
+      font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.75s forwards;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: clamp(1.5rem, 4vh, 2.5rem);
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.95s forwards;
+    }
+
+    footer .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    footer .status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(200, 69, 42, 0.5);
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    @keyframes reveal { to { transform: translateY(0); } }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(200, 69, 42, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(200, 69, 42, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(200, 69, 42, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      header, .kicker, .lede, footer { opacity: 1 !important; }
+      h1 .line span { transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">FORMA<span class="dot">.</span></div>
+      <div class="eyebrow">Onboarding</div>
+    </header>
+
+    <main>
+      <span class="kicker">A new beginning</span>
+      <h1>
+        <span class="line"><span>Welcome to</span></span>
+        <span class="line"><span class="accent">Forma</span></span>
+      </h1>
+      <p class="lede">
+        You're in. Everything starts here — clean, considered, and ready
+        when you are.
+      </p>
+    </main>
+
+    <footer>
+      <span class="status">System ready</span>
+      <span>Forma &middot; Est. 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
