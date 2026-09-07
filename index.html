@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #14121a;
+      --ink-soft: #4a4658;
+      --accent: #6c4bff;
+      --paper: #f7f5f2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 15% -10%, rgba(108, 75, 255, 0.14), transparent 60%),
+        radial-gradient(1000px 600px at 100% 110%, rgba(255, 138, 76, 0.12), transparent 55%),
+        linear-gradient(160deg, #faf8f5 0%, var(--paper) 45%, #efe9ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 6vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(0.7rem, 1.6vw, 0.82rem);
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 9vw, 6.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 52ch;
+      margin-bottom: 2.75rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.42s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: 2.75rem;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s forwards;
+    }
+
+    .meta {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Machina Drops</p>
+    <h1>Welcome to<br><em>Machina&nbsp;Drops</em></h1>
+    <div class="rule"></div>
+    <p class="lede">Fresh sports intelligence, delivered as it happens. Your onboarding is live — everything is wired and ready to go.</p>
+    <p class="meta">ONBOARDING SMOKE TEST · SHIPPED</p>
+  </main>
+</body>
+</html>
