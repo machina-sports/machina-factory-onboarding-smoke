@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #0e0e11;
+      --ink-soft: #4a4a55;
+      --line: rgba(14, 14, 17, 0.1);
+      --accent: #4f39f6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 10%, #fef7ee 0%, rgba(254, 247, 238, 0) 55%),
+        radial-gradient(130% 130% at 95% 90%, #eaf0ff 0%, rgba(234, 240, 255, 0) 50%),
+        linear-gradient(160deg, #fbfbfd 0%, #f3f0ec 100%);
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 5vw, 3.5rem);
+    }
+
+    /* Top bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      animation: fade 0.9s ease both;
+    }
+
+    .topbar .mark {
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.16em;
+    }
+
+    .topbar .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2fb87a;
+      box-shadow: 0 0 0 0 rgba(47, 184, 122, 0.5);
+      animation: pulse 2.4s infinite;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 12vh, 8rem) 0;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      animation: rise 0.9s ease 0.1s both;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2.75rem, 9vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      animation: rise 1s ease 0.2s both;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      margin-top: 2rem;
+      max-width: 46ch;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      animation: rise 1s ease 0.35s both;
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--ink);
+      margin: 2.5rem 0;
+      animation: grow 1s ease 0.45s both;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      animation: fade 1s ease 0.6s both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes grow {
+      from { width: 0; opacity: 0; }
+      to { width: 64px; opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(47, 184, 122, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(47, 184, 122, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(47, 184, 122, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header class="topbar">
+      <span class="mark">Machina</span>
+      <span class="status"><span class="dot"></span>System online</span>
+    </header>
+
+    <main class="hero">
+      <p class="eyebrow">Onboarding · Smoke Test</p>
+      <h1>Welcome to <em>Machina&nbsp;Drops</em></h1>
+      <div class="rule"></div>
+      <p class="lede">Your workspace is live and ready. This is the first drop — everything from here is signal.</p>
+    </main>
+
+    <footer class="footer">
+      <span>Machina Sports</span>
+      <span>Est. 2026</span>
+    </footer>
+  </div>
+</body>
+</html>
