@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Machina Drops</title>
+  <style>
+    :root {
+      --ink: #0d0f14;
+      --ink-soft: #4a4f5c;
+      --accent: #ff5a1f;
+      --line: rgba(13, 15, 20, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 85% -10%, #ffe9df 0%, rgba(255, 233, 223, 0) 55%),
+        radial-gradient(110% 110% at 0% 110%, #e6ecff 0%, rgba(230, 236, 255, 0) 50%),
+        linear-gradient(180deg, #fbfaf8 0%, #f4f2ee 100%);
+      overflow-x: hidden;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1120px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 5vw, 3.5rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.05s forwards;
+    }
+
+    .wordmark {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .status {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(255, 90, 31, 0.55);
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 12vh, 8rem) 0;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      opacity: 0;
+      animation: rise 0.8s ease-out 0.15s forwards;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2.75rem, 11vw, 7.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      transform: translateY(0.4em);
+      animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.25s; }
+    h1 .line:nth-child(2) { animation-delay: 0.4s; }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 46ch;
+      margin-top: clamp(1.75rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.55s forwards;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      padding-top: clamp(1.5rem, 4vw, 2.5rem);
+      border-top: 1px solid var(--line);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.9s ease-out 0.7s forwards;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 90, 31, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(255, 90, 31, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 90, 31, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <span class="wordmark">Machina</span>
+      <span class="status"><span class="dot"></span>Online</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Onboarding · Drop 001</p>
+      <h1>
+        <span class="line">Welcome to</span>
+        <span class="line"><em>Machina Drops</em></span>
+      </h1>
+      <p class="lede">
+        Fresh sports content, delivered as it happens. You're all set — the desk is
+        live and the first drop is on its way.
+      </p>
+    </main>
+
+    <footer>
+      <span>Machina Sports</span>
+      <span>Smoke test · v1.0</span>
+    </footer>
+  </div>
+</body>
+</html>
