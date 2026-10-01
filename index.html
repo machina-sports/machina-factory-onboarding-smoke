@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to FQA 1002</title>
+  <style>
+    :root {
+      --ink: #15131b;
+      --ink-soft: #55505f;
+      --accent: #6d5bd0;
+      --bg-1: #f6f4fb;
+      --bg-2: #eef3fb;
+      --bg-3: #fbf2f4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 15% 10%, var(--bg-3), transparent 55%),
+        radial-gradient(1000px 900px at 90% 20%, var(--bg-2), transparent 50%),
+        radial-gradient(1100px 1000px at 50% 100%, var(--bg-1), transparent 60%),
+        linear-gradient(160deg, #fdfcff 0%, #f3f0fa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 48rem;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: clamp(0.65rem, 1.6vw, 0.78rem);
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 10vw, 6rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.22s; }
+    h1 .line:nth-child(2) { animation-delay: 0.36s; }
+
+    h1 .mark {
+      background: linear-gradient(100deg, var(--accent), #c05b9e 60%, #e08a52);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s forwards;
+    }
+
+    .rule {
+      width: 3.5rem;
+      height: 2px;
+      background: var(--accent);
+      margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
+      opacity: 0;
+      transform-origin: left center;
+      animation: grow 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.64s forwards;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.78s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { opacity: 0; transform: scaleX(0); }
+      to   { opacity: 1; transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>
+      <span class="line">Welcome to</span>
+      <span class="line mark">FQA 1002</span>
+    </h1>
+    <div class="rule" role="presentation"></div>
+    <p class="lede">
+      Everything is wired up and running. This page is a quick confirmation
+      that your environment is live and ready to go.
+    </p>
+    <footer>FQA 1002</footer>
+  </main>
+</body>
+</html>
