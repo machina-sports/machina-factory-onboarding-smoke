@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome · Machina QA</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b645c;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #c2410c;
+      --paper: #faf6f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 12% -10%, #fff7ec 0%, rgba(255, 247, 236, 0) 55%),
+        radial-gradient(1000px 800px at 108% 118%, #f1e4d6 0%, rgba(241, 228, 214, 0) 60%),
+        linear-gradient(170deg, #fdfaf5 0%, #f4ece1 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shell {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1.75rem, 4vw, 3.5rem);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .mark {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.12);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 8vh, 5rem) 0;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.8s ease 0.1s forwards;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2.4rem, 7.5vw, 5.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      max-width: 15ch;
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.22s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.02rem, 2.2vw, 1.3rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 54ch;
+      opacity: 0;
+      animation: rise 0.9s ease 0.36s forwards;
+    }
+
+    .rule {
+      height: 1px;
+      width: 100%;
+      background: var(--line);
+      margin: clamp(2rem, 6vw, 3.5rem) 0 clamp(1.25rem, 3vw, 1.75rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: draw 1s ease 0.5s forwards;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 0.9s ease 0.6s forwards;
+    }
+
+    footer .status { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+    footer .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes draw {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lede, footer { animation: none; opacity: 1; }
+      .rule { animation: none; transform: scaleX(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <span class="mark" aria-hidden="true"></span>
+      <span>Machina · QA</span>
+    </header>
+
+    <main>
+      <p class="eyebrow">Onboarding smoke test</p>
+      <h1>Welcome to <span class="accent">Machina QA Nome Muito Longo de Empresa Brasileira</span></h1>
+      <p class="lede">Your workspace is live and responding. This is a minimal welcome screen confirming the environment renders cleanly from a single file — no build step, no dependencies.</p>
+      <div class="rule" aria-hidden="true"></div>
+      <footer>
+        <span class="status"><span class="dot" aria-hidden="true"></span> Environment ready</span>
+        <span>Single-file build · v1.0</span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
