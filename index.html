@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to FQA 2021</title>
+  <style>
+    :root {
+      --ink: #14130f;
+      --muted: #6b675d;
+      --line: rgba(20, 19, 15, 0.12);
+      --accent: #b4532a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 12% 0%, #fdfcf8 0%, #f5f1e8 46%, #efe7d6 100%),
+        radial-gradient(90% 80% at 100% 100%, rgba(180, 83, 42, 0.10) 0%, rgba(180, 83, 42, 0) 60%);
+      background-blend-mode: normal;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 6vw, 6rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: 100%;
+      max-width: 44rem;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.25rem, 4vw, 2rem);
+      opacity: 0;
+      animation: rise 0.7s ease forwards 0.1s;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 11vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.25s;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    .rule {
+      width: 3.5rem;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: draw 0.6s ease forwards 0.5s;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 34rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.65s;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: clamp(3rem, 10vw, 5rem);
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: rise 0.8s ease forwards 0.8s;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes draw {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to <span class="accent">FQA&nbsp;2021</span></h1>
+    <div class="rule"></div>
+    <p class="lede">Everything is wired up and running. This is your starting point &mdash; clean, fast, and ready for whatever comes next.</p>
+    <footer>
+      <span>FQA 2021</span>
+      <span>Ready</span>
+    </footer>
+  </main>
+</body>
+</html>
