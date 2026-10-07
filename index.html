@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to FQA 2005</title>
+  <style>
+    :root {
+      --ink: #14121a;
+      --muted: #6b6676;
+      --accent: #5b3df5;
+      --accent-soft: #b9a8ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(91, 61, 245, 0.10), transparent 60%),
+        radial-gradient(1000px 500px at 110% 110%, rgba(255, 128, 171, 0.10), transparent 55%),
+        linear-gradient(160deg, #fbfaff 0%, #f3f0fb 48%, #efe9f8 100%);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 44rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+      animation-delay: 0.05s;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 9vw, 5.5rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+      animation-delay: 0.18s;
+    }
+
+    h1 .accent {
+      display: block;
+      background: linear-gradient(120deg, var(--accent), #c04bff 55%, #ff80ab);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lead {
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 34rem;
+      margin: 0 auto;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+      animation-delay: 0.34s;
+    }
+
+    .divider {
+      width: 3.5rem;
+      height: 2px;
+      margin: 2.5rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent-soft), transparent);
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, p.lead, .divider { animation: none; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding · Smoke Test</p>
+    <h1>Welcome to<span class="accent">FQA 2005</span></h1>
+    <p class="lead">Everything is wired up and ready. This is a minimal one-page welcome screen confirming the setup works end to end.</p>
+    <div class="divider"></div>
+  </main>
+</body>
+</html>
