@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to FQA 2016</title>
+  <style>
+    :root {
+      --ink: #10131a;
+      --ink-soft: #4a515e;
+      --accent: #c2410c;
+      --paper: #f7f4ef;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 0%, #fdfbf7 0%, #f3ede3 42%, #e9e0d2 100%),
+        var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 6vw, 6rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .stage {
+      width: 100%;
+      max-width: 760px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    }
+
+    .kicker {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.4rem, 4vw, 2.2rem);
+      opacity: 0;
+      animation: fade 0.8s ease 0.15s forwards;
+    }
+
+    .rule {
+      display: inline-block;
+      width: 46px;
+      height: 2px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 10vw, 6rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    h1 .year {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    p.lede {
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      line-height: 1.65;
+      color: var(--ink-soft);
+      max-width: 52ch;
+      opacity: 0;
+      animation: fade 0.9s ease 0.4s forwards;
+    }
+
+    footer {
+      margin-top: clamp(2.6rem, 7vw, 4rem);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8a8275;
+      opacity: 0;
+      animation: fade 1s ease 0.6s forwards;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stage, .kicker, p.lede, footer { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <p class="kicker"><span class="rule"></span>Onboarding</p>
+    <h1>Welcome to<span class="year">FQA 2016</span></h1>
+    <p class="lede">
+      You're all set. This is a quiet starting point — clean, fast, and ready
+      for whatever comes next.
+    </p>
+    <footer>Smoke test &middot; Ready to ship</footer>
+  </main>
+</body>
+</html>
