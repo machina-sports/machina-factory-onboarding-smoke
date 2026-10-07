@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome to FQA 2020</title>
+  <style>
+    :root {
+      --ink: #14121a;
+      --ink-soft: #4a4653;
+      --accent: #5b3df5;
+      --bg-a: #f6f4ff;
+      --bg-b: #fef3f0;
+      --bg-c: #eef7ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 120% at 15% 10%, var(--bg-a) 0%, transparent 55%),
+        radial-gradient(100% 100% at 90% 20%, var(--bg-c) 0%, transparent 50%),
+        radial-gradient(120% 120% at 70% 100%, var(--bg-b) 0%, transparent 55%),
+        #fbfafe;
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 42rem;
+      width: 100%;
+      text-align: left;
+      animation: rise 900ms cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(.7rem, 2.2vw, .8rem);
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: clamp(1.25rem, 4vw, 2rem);
+      opacity: 0;
+      animation: fade 700ms ease 150ms forwards;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2.6rem, 11vw, 5.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .rule {
+      width: 3.25rem;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: grow 700ms ease 450ms forwards;
+    }
+
+    p {
+      font-size: clamp(1rem, 3.4vw, 1.2rem);
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      opacity: 0;
+      animation: fade 700ms ease 600ms forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes grow { to { opacity: 1; transform: scaleX(1); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      main, .eyebrow, .rule, p { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to <em>FQA&nbsp;2020</em></h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p>Everything is wired up and running. This is your starting point &mdash; clean, fast, and ready for whatever comes next.</p>
+  </main>
+</body>
+</html>
