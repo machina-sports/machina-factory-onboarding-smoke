@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to FQA 2008</title>
+  <style>
+    :root {
+      --ink: #14130f;
+      --muted: #6b665c;
+      --accent: #b4442e;
+      --paper: #f7f4ee;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100%;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 10% 0%, #fbf9f4 0%, rgba(251,249,244,0) 55%),
+        radial-gradient(130% 110% at 100% 100%, #efe7d8 0%, rgba(239,231,216,0) 60%),
+        linear-gradient(160deg, #f7f4ee 0%, #efe9dd 100%);
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 6vw, 6rem);
+    }
+
+    main {
+      max-width: 44rem;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: clamp(0.65rem, 2vw, 0.78rem);
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+      opacity: 0;
+      animation: rise 0.8s ease 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 11vw, 6rem);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.22s forwards;
+    }
+
+    h1 .year {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 34rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.36s forwards;
+    }
+
+    .rule {
+      width: 3.5rem;
+      height: 2px;
+      background: var(--ink);
+      margin: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2.25rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.7s ease 0.5s forwards;
+    }
+
+    footer {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.5rem, 6vw, 6rem);
+      opacity: 0;
+      animation: rise 1s ease 0.7s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <main>
+      <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+      <h1>Welcome to<span class="year">FQA 2008</span></h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="lede">Everything is wired up and ready. This is your starting point — clean, quiet, and built to grow from here.</p>
+    </main>
+  </div>
+  <footer>FQA 2008</footer>
+</body>
+</html>
