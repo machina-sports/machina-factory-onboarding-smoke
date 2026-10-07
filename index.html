@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome · Acme Sports Media Brazil Group</title>
+  <style>
+    :root {
+      --ink: #0f1115;
+      --ink-soft: #4a5160;
+      --accent: #2f6bff;
+      --line: rgba(15, 17, 21, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(47, 107, 255, 0.10), transparent 60%),
+        radial-gradient(900px 500px at 110% 120%, rgba(255, 138, 76, 0.10), transparent 55%),
+        linear-gradient(180deg, #fbfbfd 0%, #f3f4f8 100%);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      padding-bottom: 0.25rem;
+      opacity: 0;
+      animation: fade 0.8s ease 0.15s forwards;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    h1 {
+      margin-top: 1.4rem;
+      font-size: clamp(2.6rem, 8vw, 5.25rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .lede {
+      margin-top: 1.6rem;
+      max-width: 48ch;
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      line-height: 1.65;
+      color: var(--ink-soft);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      opacity: 0;
+      animation: fade 0.8s ease 0.4s forwards;
+    }
+
+    .meta {
+      margin-top: 2.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 2rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: fade 0.8s ease 0.6s forwards;
+    }
+
+    .meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .meta .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card, .eyebrow, .lede, .meta { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to Acme Sports Media <span class="accent">Brazil Group</span></h1>
+    <p class="lede">Your workspace is live. This is a smoke-test screen confirming the environment is set up and ready for what comes next.</p>
+    <div class="meta">
+      <span><span class="dot"></span>Environment ready</span>
+      <span>Acme Sports Media · Brazil Group</span>
+    </div>
+  </main>
+</body>
+</html>
