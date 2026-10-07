@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to FQA 2013</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --ink-soft: #5a524c;
+      --paper: #f7f3ec;
+      --accent: #b4532a;
+      --line: rgba(20, 17, 15, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(180, 83, 42, 0.10), transparent 60%),
+        radial-gradient(900px 700px at -10% 110%, rgba(40, 70, 90, 0.08), transparent 55%),
+        linear-gradient(180deg, #faf7f0 0%, var(--paper) 55%, #efe8dc 100%);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      flex: 1;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 6vw, 5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 12vw, 8.5rem);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s forwards;
+    }
+
+    h1 .accent {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 48ch;
+      margin-top: clamp(1.75rem, 4vw, 2.75rem);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s forwards;
+    }
+
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--ink);
+      margin-top: clamp(2.25rem, 5vw, 3.5rem);
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: draw 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s forwards;
+    }
+
+    footer {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: clamp(1.25rem, 4vw, 2rem) clamp(1.5rem, 6vw, 5rem);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.9s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes draw {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to <span class="accent">FQA&nbsp;2013</span></h1>
+    <p class="lede">
+      Everything is up and running. This is a minimal welcome screen —
+      a single, self-contained page with no build step and no dependencies.
+    </p>
+    <div class="rule" aria-hidden="true"></div>
+  </main>
+
+  <footer>
+    <span>FQA 2013</span>
+    <span>Status: Online</span>
+  </footer>
+</body>
+</html>
