@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to FQA 2011</title>
+  <style>
+    :root {
+      --ink: #14110f;
+      --muted: #6b6560;
+      --line: rgba(20, 17, 15, 0.12);
+      --accent: #b4532a;
+      --bg-top: #fbf7f1;
+      --bg-bottom: #efe7dc;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(180, 83, 42, 0.08), transparent 60%),
+        radial-gradient(900px 500px at 110% 120%, rgba(60, 90, 130, 0.07), transparent 55%),
+        linear-gradient(160deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7vmin 6vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .screen {
+      width: 100%;
+      max-width: 760px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: rise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 120ms forwards;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .eyebrow::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.8rem;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 48ch;
+      margin-bottom: 3rem;
+    }
+
+    .footer {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .screen { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <p class="eyebrow">Onboarding</p>
+    <h1>Welcome to<br /><span class="accent">FQA 2011</span></h1>
+    <p class="lead">
+      You're all set. This is the starting point — clean, quiet, and ready
+      for whatever comes next.
+    </p>
+    <div class="footer">
+      <span>FQA 2011</span>
+      <span>Smoke test · v1</span>
+    </div>
+  </main>
+</body>
+</html>
