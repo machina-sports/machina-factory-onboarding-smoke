@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to FQA 2017</title>
+  <style>
+    :root {
+      --ink: #15130f;
+      --ink-soft: #5c564c;
+      --accent: #b4532a;
+      --paper: #f6f1e7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 15% 0%, #fbf7ee 0%, rgba(251,247,238,0) 55%),
+        radial-gradient(130% 110% at 95% 100%, #efe3cf 0%, rgba(239,227,207,0) 50%),
+        linear-gradient(160deg, #f8f3ea 0%, #ece0cc 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 5vw, 5rem);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      max-width: 44rem;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.42em;
+      font-size: clamp(0.62rem, 1.6vw, 0.78rem);
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+      opacity: 0;
+      animation: rise 0.8s ease 0.1s forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 11vw, 6.5rem);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: clamp(1.4rem, 3.5vw, 2rem);
+      opacity: 0;
+      animation: rise 0.9s ease 0.25s forwards;
+    }
+
+    h1 .accent { color: var(--accent); font-style: italic; }
+
+    .rule {
+      width: 0;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: clamp(1.4rem, 3.5vw, 2rem);
+      animation: grow 0.9s ease 0.5s forwards;
+    }
+
+    p {
+      font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      opacity: 0;
+      animation: rise 0.9s ease 0.65s forwards;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(1rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      from { width: 0; }
+      to   { width: clamp(3.5rem, 10vw, 5.5rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, p { opacity: 1; animation: none; }
+      .rule { width: clamp(3.5rem, 10vw, 5.5rem); animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Onboarding &middot; Smoke Test</p>
+    <h1>Welcome to <span class="accent">FQA</span> 2017</h1>
+    <div class="rule"></div>
+    <p>Everything is wired up and running. This is your starting point &mdash; clean, fast, and ready for whatever comes next.</p>
+  </main>
+</body>
+</html>
