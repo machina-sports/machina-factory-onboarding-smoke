@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to You</title>
+  <style>
+    :root {
+      --ink: #14121c;
+      --muted: #6b6676;
+      --accent: #5b4bff;
+      --bg-top: #f6f4ff;
+      --bg-bottom: #fdfbff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 18% 0%, rgba(91, 75, 255, 0.10), transparent 55%),
+        radial-gradient(110% 80% at 100% 100%, rgba(255, 128, 170, 0.10), transparent 50%),
+        linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 40rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: rise 0.8s ease forwards;
+    }
+
+    h1 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 12vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 .line {
+      display: block;
+      opacity: 0;
+      animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    h1 .line:nth-child(1) { animation-delay: 0.12s; }
+    h1 .line:nth-child(2) { animation-delay: 0.24s; }
+
+    h1 .accent {
+      background: linear-gradient(100deg, var(--accent), #c04bff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 32rem;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .rule {
+      width: 3.5rem;
+      height: 2px;
+      background: var(--accent);
+      margin: 2.5rem 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: grow 0.8s ease forwards;
+      animation-delay: 0.55s;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: rise 1s ease forwards;
+      animation-delay: 0.7s;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { transform: scaleX(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Onboarding &middot; Hello</p>
+    <h1>
+      <span class="line">Welcome</span>
+      <span class="line">to <span class="accent">You</span></span>
+    </h1>
+    <div class="rule"></div>
+    <p class="lede">
+      A clean start. Everything from here is yours to shape &mdash; take a
+      breath, look around, and begin whenever you're ready.
+    </p>
+  </main>
+  <footer>Machina &middot; Smoke Test</footer>
+</body>
+</html>
