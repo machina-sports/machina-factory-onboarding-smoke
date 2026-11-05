@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Welcome to Machina Drops</title>
+  <meta name="description" content="Welcome to Machina Drops.">
+  <style>
+    :root {
+      --paper: oklch(0.975 0.008 80);
+      --paper-deep: oklch(0.93 0.02 60);
+      --ink: oklch(0.2 0.01 60);
+      --muted: oklch(0.46 0.012 60);
+      --accent: oklch(0.58 0.16 35);
+      --rule: oklch(0.2 0.01 60 / 0.16);
+      --display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { margin: 0; height: 100%; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 80% at 100% 0%, oklch(0.9 0.05 40 / 0.55), transparent 60%),
+        radial-gradient(90% 70% at 0% 100%, oklch(0.92 0.03 90 / 0.6), transparent 65%),
+        linear-gradient(160deg, var(--paper) 0%, var(--paper-deep) 100%);
+      background-attachment: fixed;
+      font-family: var(--display);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+
+    .bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem clamp(1.5rem, 6vw, 5rem);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    main {
+      align-self: center;
+      padding: clamp(3rem, 10vh, 8rem) clamp(1.5rem, 6vw, 5rem);
+      max-width: 72rem;
+      width: 100%;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 0 0 2rem;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .kicker::before {
+      content: "";
+      width: 2.5rem;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: clamp(3rem, 11vw, 8.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+    h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .lede {
+      margin: clamp(2rem, 5vh, 3.5rem) 0 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      max-width: 34rem;
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      line-height: 1.55;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    footer {
+      padding: 1.5rem clamp(1.5rem, 6vw, 5rem);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both; }
+      .reveal:nth-child(2) { animation-delay: 0.12s; }
+      .reveal:nth-child(3) { animation-delay: 0.26s; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(14px); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <span>Machina Drops</span>
+    <span>Issue 01</span>
+  </header>
+
+  <main>
+    <p class="kicker reveal">Welcome</p>
+    <h1 class="reveal">Welcome to <em>Machina</em> Drops</h1>
+    <p class="lede reveal">You're in. This is where new drops land first — take a breath, look around, and settle in.</p>
+  </main>
+
+  <footer>&copy; Machina</footer>
+</body>
+</html>
